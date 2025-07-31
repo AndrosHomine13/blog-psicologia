@@ -6,34 +6,24 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(value, { zone: "utc" }).toFormat(format);
   });
 
-  return {
-    dir: {
-      input: ".",
-      includes: "_includes",
-      data: "_data",
-    }
-  };
-};
+  // Copiar carpetas estáticas
+  eleventyConfig.addPassthroughCopy("css");    // si tienes CSS
+  eleventyConfig.addPassthroughCopy("img");    // imágenes
+  eleventyConfig.addPassthroughCopy("admin");  // Netlify CMS
 
-
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("css"); // si tienes CSS estático
+  // Colección de posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./posts/*.md");
   });
-};
 
-module.exports = function(eleventyConfig) {
-  // Copia la carpeta admin al sitio final
-  eleventyConfig.addPassthroughCopy("admin");
-
-  // También copia otros si necesitas (como img/)
-  eleventyConfig.addPassthroughCopy("img");
-
+  // Configuración de directorios
   return {
     dir: {
-      input: ".",      // entrada raíz
-      output: "_site", // salida por defecto
+      input: ".",       // carpeta raíz
+      includes: "_includes",
+      data: "_data",
+      output: "_site",  // carpeta de salida
     }
   };
 };
+
