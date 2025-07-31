@@ -23,4 +23,17 @@ module.exports = function(eleventyConfig) {
   });
 };
 
+module.exports = function(eleventyConfig) {
+  // Copia la carpeta admin al sitio final
+  eleventyConfig.addPassthroughCopy("admin");
 
+  // También copia otros si necesitas (como img/)
+  eleventyConfig.addPassthroughCopy("img");
+
+  return {
+    dir: {
+      input: ".",      // entrada raíz
+      output: "_site", // salida por defecto
+    }
+  };
+};
