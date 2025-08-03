@@ -15,4 +15,5 @@ collections:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Categoría", name: "category", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Extracto", name: "excerpt", widget: "text" }
       - { label: "Contenido", name: "body", widget: "markdown" }

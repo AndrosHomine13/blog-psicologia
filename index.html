@@ -100,39 +100,31 @@
         </div>
     </section>
 
+    <!-- Showing Articles -->
     <script type="module">
         async function loadArticles() {
-            const files = [
-            ];
+            const res = await fetch('articulos/index.json');
+            const articles = await res.json();
 
             const container = document.getElementById('articles-container');
+            container.innerHTML = '';
 
-        for (const file of files) {
-                const res = await fetch(file);
-                const text = await res.text();
-                const match = /---([\s\S]*?)---/.exec(text);
-                const frontmatter = Object.fromEntries(
-                    (match?.[1] || '').split('\n').filter(Boolean).map(line => {
-                    const [key, ...rest] = line.split(':');
-                    return [key.trim(), rest.join(':').trim()];
-                })
-            );
-
-            const card = document.createElement('div');
-            card.className = "bg-white rounded-xl overflow-hidden shadow-md";
-            card.innerHTML = `
-                <div class="h-48 overflow-hidden">
-                    <img src="${frontmatter.image}" alt="${frontmatter.title}" class="w-full h-full object-cover" />
-                </div>
-                <div class="p-6">
-                    <span class="text-sm text-indigo-600">${frontmatter.category}</span>
-                    <h3 class="text-xl font-semibold mt-2 mb-3">${frontmatter.title}</h3>
-                    <p class="text-gray-600 mb-4">${frontmatter.excerpt}</p>
-                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">Leer más →</a>
-                </div>
-            `;
-            container.appendChild(card);
-            }
+            articles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl overflow-hidden shadow-md";
+                card.innerHTML = `
+                    <div class="h-48 overflow-hidden">
+                        <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-indigo-600">${article.category}</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">${article.title}</h3>
+                        <p class="text-gray-600 mb-4">${article.excerpt}</p>
+                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">Leer más →</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
         }
 
         loadArticles();
