@@ -2,16 +2,18 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "img/uploads"
-public_folder: "/img/uploads"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "posts"
+  - name: "articulos"
     label: "Artículos"
-    folder: "posts"
+    folder: "articulos"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "string" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Extracto", name: "excerpt", widget: "text" }
       - { label: "Contenido", name: "body", widget: "markdown" }
