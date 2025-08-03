@@ -43,13 +43,11 @@ jobs:
           fs.writeFileSync(\`\${path}/index.json\`, JSON.stringify(data, null, 2));
           EOF
 
-      - name: Commit y push del index.json
-        env:
-          TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Push cambios
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
-          git add articulos/index.json
-          git commit -m "Actualizando index.json" || echo "No hay cambios"
-          git push origin main
+          git config user.name "Andrés desde GitHub Actions"
+          git config user.email "<>"
+          git add index.json
+          git commit -m "Actualizando index.json"
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/AndrosHomine13/blog-psicologia.git HEAD:main
+
