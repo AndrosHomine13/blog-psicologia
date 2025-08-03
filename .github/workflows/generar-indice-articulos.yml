@@ -44,9 +44,12 @@ jobs:
           EOF
 
       - name: Commit y push del index.json
+        env:
+          TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
           git add articulos/index.json
-          git commit -m "Actualizando index.json"
-          git push
+          git commit -m "Actualizando index.json" || echo "No hay cambios"
+          git push origin main
