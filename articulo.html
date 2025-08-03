@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artículo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html">← Volver al inicio</a>
+  </header>
+
+  <article id="contenido-articulo"></article>
+
+  <script>
+    fetch(location.hash.slice(1))
+      .then(res => res.text())
+      .then(md => {
+        const html = marked.parse(md);
+        document.getElementById("contenido-articulo").innerHTML = html;
+      });
+  </script>
+</body>
+</html>
