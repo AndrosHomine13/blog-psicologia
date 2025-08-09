@@ -1,11 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 
-// Carpeta de artículos y ruta del index.json dentro de ella
+// Carpeta de artículos
 const articlesDir = path.join(__dirname, '../articulos');
+
+// Ruta para guardar el JSON
 const outputPath = path.join(articlesDir, 'index.json');
 
-// Leer y ordenar los .md por fecha de modificación (más recientes primero)
+// Verificar si la carpeta existe
+if (!fs.existsSync(articlesDir)) {
+  console.error(`❌ La carpeta ${articlesDir} no existe.`);
+  process.exit(1);
+}
+
+// Leer y ordenar archivos .md (ignorando index.json)
 const files = fs.readdirSync(articlesDir)
   .filter(file => file.endsWith('.md'))
   .sort((a, b) => {
@@ -15,7 +23,7 @@ const files = fs.readdirSync(articlesDir)
   })
   .map(file => `/articulos/${file}`);
 
-// Guardar el JSON dentro de la carpeta articulos
-fs.writeFileSync(outputPath, JSON.stringify(files, null, 2));
+// Guardar index.json
+fs.writeFileSync(outputPath, JSON.stringify(files, null, 2), 'utf8');
 
 console.log(`✅ index.json generado con ${files.length} artículos en ${outputPath}`);
