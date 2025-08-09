@@ -98,78 +98,72 @@
         </div>
     </section>
 
-    <!-- Showing Articles -->
+    <!-- Script para cargar artículos -->
     <script type="module">
         import { marked } from "https://cdn.jsdelivr.net/npm/marked@9.1.2/lib/marked.esm.js";
-
         window.marked = marked;
 
-        async function loadArticles() {
-            const res = await fetch('/articulos/index.json');
-            const files = await res.json();
+        document.addEventListener("DOMContentLoaded", () => {
+            async function loadArticles() {
+                const res = await fetch('/articulos/index.json');
+                const files = await res.json();
+                const container = document.getElementById('articles-container');
+                container.innerHTML = '';
 
-            const container = document.getElementById('articles-container');
-            container.innerHTML = '';
+                for (const file of files) {
+                    try {
+                        const res = await fetch(file);
+                        const text = await res.text();
+                        const match = /^---([\s\S]*?)---/.exec(text);
+                        if (!match) continue;
 
-            for (const file of files) {
-                try {
-                    const res = await fetch(file);
-                    const text = await res.text();
+                        const frontmatter = Object.fromEntries(
+                            match[1]
+                                .split('\n')
+                                .filter(Boolean)
+                                .map(line => {
+                                    const [key, ...rest] = line.split(':');
+                                    return [key.trim(), rest.join(':').trim()];
+                                })
+                        );
 
-                    const match = /^---([\s\S]*?)---/.exec(text);
-                    if (!match) {
-                        console.warn(`No se encontró frontmatter en ${file}`);
-                        continue;
+                        const content = text.replace(/^---[\s\S]*?---/, '').trim();
+
+                        const card = document.createElement('div');
+                        card.className = "bg-white rounded-xl overflow-hidden shadow-md";
+                        card.innerHTML = `
+                            <div class="h-48 overflow-hidden">
+                                <img src="${frontmatter.image}" alt="${frontmatter.title}" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="p-6">
+                                <span class="text-sm text-green-600">${frontmatter.category}</span>
+                                <h3 class="text-xl font-semibold mt-2 mb-3">${frontmatter.title}</h3>
+                                <p class="text-gray-600 mb-4">${frontmatter.excerpt}</p>
+                                <button class="leer-mas text-green-600 font-medium hover:text-indigo-800" data-content="${encodeURIComponent(content)}">Leer más →</button>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    } catch (error) {
+                        console.error(`Error cargando el archivo ${file}:`, error);
                     }
-
-                    const frontmatter = Object.fromEntries(
-                        match[1]
-                            .split('\n')
-                            .filter(Boolean)
-                            .map(line => {
-                                const [key, ...rest] = line.split(':');
-                                return [key.trim(), rest.join(':').trim()];
-                            })
-                    );
-
-                    const content = text.replace(/^---[\s\S]*?---/, '').trim();
-
-                    const card = document.createElement('div');
-                    card.className = "bg-white rounded-xl overflow-hidden shadow-md";
-                    card.innerHTML = `
-                        <div class="h-48 overflow-hidden">
-                            <img src="${frontmatter.image}" alt="${frontmatter.title}" class="w-full h-full object-cover" />
-                        </div>
-                        <div class="p-6">
-                            <span class="text-sm text-green-600">${frontmatter.category}</span>
-                            <h3 class="text-xl font-semibold mt-2 mb-3">${frontmatter.title}</h3>
-                            <p class="text-gray-600 mb-4">${frontmatter.excerpt}</p>
-                            <button class="leer-mas text-green-600 font-medium hover:text-indigo-800" data-content="${encodeURIComponent(content)}">Leer más →</button>
-                        </div>
-                    `;
-                    container.appendChild(card);
-                } catch (error) {
-                    console.error(`Error cargando el archivo ${file}:`, error);
                 }
             }
 
-            // Evento para mostrar el modal
-            document.addEventListener('click', async function (e) {
+            loadArticles();
+
+            // Evento para mostrar y cerrar el modal
+            document.addEventListener('click', e => {
                 if (e.target.classList.contains('leer-mas')) {
                     const raw = decodeURIComponent(e.target.getAttribute('data-content'));
                     document.getElementById('modalContent').innerHTML = marked.parse(raw);
-
                     document.getElementById('modal').classList.remove('hidden');
                 }
-
                 if (e.target.id === 'closeModal' || e.target.id === 'modal') {
                     document.getElementById('modal').classList.add('hidden');
                     document.getElementById('modalContent').innerHTML = '';
                 }
             });
-        }
-
-        loadArticles();
+        });
     </script>
 
     <!-- Footer -->
