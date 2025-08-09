@@ -1,0 +1,12 @@
+{
+  "name": "blog-netlify-cms",
+  "version": "1.0.0",
+  "description": "Blog con Netlify CMS y generador de index.json",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/update-index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
