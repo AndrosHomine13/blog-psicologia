@@ -5,36 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sofía Paredes Psicóloga</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/css?f[]=cremiss@400,500,700&display=swap" rel="stylesheet">
     <style>
+        /* Tipografías */
         body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Monserrat', sans-serif;
         }
+
+        h1, h2, h3, .title {
+            font-family: 'League Spartan';
+            font-weight: 700;
+        }
+
+        h1.special {
+            font-family: 'Cremiss', serif;
+        }
+
+        :root {
+            --verde-neon: rgb(192, 235, 32);
+            --negro: rgb(0, 0, 0);
+            --verde-claro: rgb(217, 255, 183);
+            --gris-claro: rgb(250, 250, 250);
+        }
+
         .hero-gradient {
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            background: linear-gradient(135deg, var(--verde-neon) 0%, var(--verde-claro) 100%);
         }
+
+        .navbar-title {
+            color: var(--negro);
+        }
+
+        .section.bg {
+            background-color: var(--gris-claro);
+        }
+
+        .puntos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .punto {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .punto:hover {
+            transform: scale(1.03);
+        }
+
+        .icono {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+        }
+
         .article-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-xl font-bold text-green-600">Sofía Paredes Psicóloga</span>
+                    <span class="text-2xl font-['League_Spartan'] uppercase text-[var(--verde-neon)]">Sofía Paredes Psicóloga</span>
                 </div>
+
+                <!-- Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="" class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-gray-700">Inicio</a>
-                        <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-gray-700">Sobre mí</a>
-                        <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-gray-700">Metodología</a>
-                        <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-gray-700">Servicios</a>
-                        <a href="#articulos" class="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:text-gray-700">Artículos</a>
+                    <div class="ml-10 flex items-baseline space-x-6 font-['League_Spartan'] uppercase">
+                        <a href="" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Inicio</a>
+                        <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Sobre mí</a>
+                        <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Metodología</a>
+                        <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Servicios</a>
+                        <a href="#articulos" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Artículos</a>
+                        <a href="#contacto" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Contacto</a>
                     </div>
                 </div>
             </div>
@@ -42,12 +104,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-gradient text-white py-5">
+    <section id="inicio" class="bg-[var(--verde-neon)] text-white py-5">
         <div class="w-full px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row items-center justify-center text-center md:text-left">
-                <div class="md:w-3/2 lg:w-full">
-                    <h1 class="text-2xl md:text-2xl font-bold text-center leading-tight mb-4">Sofía Paredes Psicóloga</h1>
-                    <p class="text-1/2xl text-center mb-4">Transformando la mente y el cuerpo de personas y familias que buscan fortalecer la autoconfianza, autonomía y bienestar integral.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center text-center">
+                <div class="md:w-1/2 lg:w-full">
+                    <p class="text-1xl text-center font-['Montserrat']">Transformando la mente y el cuerpo de personas y familias que buscan fortalecer la autoconfianza, autonomía y bienestar integral.</p>
                 </div>
             </div>
         </div>
@@ -56,28 +117,35 @@
     <!-- About me-->
     <section id="sobre-mi" class="py-12 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Sobre mí</h2>
+
+            <!-- Title -->
+            <h2 class="text-3xl text-center mb-12"
+                style="font-family: 'League Spartan', sans-serif; font-weight: 700; color: var(--negro);">
+                Sobre mí
+            </h2>
+
             <div class="grid md:grid-cols-2 gap-12 items-center">
 
-                <div>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        Soy <span class="font-semibold text-gray-800">Psicóloga</span> egresada de la Universidad Pontificia Bolivariana, 
-                        estudiante de <span class="font-semibold text-gray-800">Entrenamiento Deportivo</span> y 
-                        <span class="font-semibold text-gray-800">bailarina profesional de Breaking</span>. 
+                <!-- Text -->
+                <div style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                    <p>
+                        Soy <span style="color: var(--verde-neon); font-weight: 600;">Psicóloga</span> egresada de la Universidad Pontificia Bolivariana, 
+                        estudiante de <span style="color: var(--verde-neon); font-weight: 600;">Entrenamiento Deportivo</span> y 
+                        <span style="color: var(--verde-neon); font-weight: 600;">bailarina profesional de Breaking</span>. 
                         A lo largo de mi trayectoria he descubierto que la clave para transformar la calidad de vida está en 
                         trabajar el cuerpo y la mente como un sistema integrado, donde ambos se potencian mutuamente</span>.
-                    </p>
+                    </p><br>
                     <p>
                         Mi experiencia como psicóloga infantil, psicoterapeuta de población con discapacidad cognitiva 
                         y docente de baile para jóvenes y adolescentes me ha permitido 
-                        <span class="font-semibold text-gray-800">fusionar técnicas psicológicas con la actividad física y el deporte</span>. 
+                        <span style="color: var(--verde-neon); font-weight: 600;">fusionar técnicas psicológicas con la actividad física y el deporte</span>. 
                         Este enfoque busca fortalecer la conexión entre el cuerpo y los procesos cognitivos, logrando un equilibrio profundo entre lo interno y lo externo.
-                    </p>
+                    </p><br>
                     <p>
                         Gracias a esta metodología, acompaño a mis pacientes y sus familias en el camino hacia 
-                        <span class="font-semibold text-gray-800">el alcance de sus objetivos</span>, 
-                        <span class="font-semibold text-gray-800">el fortalecimiento de la autoconfianza</span> y 
-                        <span class="font-semibold text-gray-800">la mejora de su calidad de vida</span>.
+                        <span style="color: var(--verde-neon); font-weight: 600;">el alcance de sus objetivos</span>, 
+                        <span style="color: var(--verde-neon); font-weight: 600;">el fortalecimiento de la autoconfianza</span> y 
+                        <span style="color: var(--verde-neon); font-weight: 600;">la mejora de su calidad de vida</span>.
                     </p>
                 </div>
 
@@ -85,54 +153,90 @@
                 <div class="flex justify-center">
                     <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/86a9a52f-fba6-4f34-a924-5be26ee0ec8f.png" 
                         alt="Psicóloga profesional sonriente en consultorio moderno con plantas y luz natural" 
-                        class="rounded-2xl shadow-xl w-3/4 md:w-2/3 lg:w-1/2">
+                        class="rounded-2xlw-3/4 md:w-2/3 lg:w-1/2 border-4 hover:shadow-xl transition"
+                        style="border-color: var(--verde-claro);">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Metodología Section -->
-    <section id="metodologia" class="py-12 bg-gray-50">
+    <section id="metodologia" class="py-12 bg-[var(--gris-claro)]">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Metodología</h2>
+
+            <!-- Title-->
+            <h2 class="text-3xl text-center mb-12"
+                style="font-family: 'League Spartan', sans-serif; color: var(--negro); font-weight:700;">
+                Metodología
+            </h2>
     
-            <!-- Introducción -->
-            <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
-            En cada proceso combino la ciencia de la psicología con estrategias prácticas y dinámicas, 
-            para que los pacientes logren <span class="font-semibold text-gray-800">cambios reales y sostenibles</span>.
+            <!-- Introduction -->
+            <p class="text-lg text-center max-w-3xl mx-auto mb-12"
+                style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                En cada proceso combino la ciencia de la psicología con estrategias prácticas y dinámicas, 
+                para que los pacientes logren <span class="font-semibold" style="color: var(--verde-neon);">cambios reales y sostenibles</span>.
             </p>
 
-            <!-- Puntos -->
+            <!-- Types of Metodology -->
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Punto A -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 text-green-700">a) Tipo de intervención</h3>
-                    <p class="text-gray-600">
+
+                <!-- Tipo de intervención -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                    <div class="flex items-center mb-3">
+                        <img src="img/tipo-de-intervencion.jpg" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Tipo de intervención
+                        </h3>
+                    </div>
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                         Trabajo con un enfoque <span class="font-medium">cognitivo-conductual</span> integrado con 
                         actividad física, movimiento corporal y arte, lo que favorece la conexión entre mente y cuerpo.
                     </p>
                 </div>
-                <!-- Punto B -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 text-green-700">b) Duración de las sesiones</h3>
-                    <p class="text-gray-600">
-                        Las sesiones duran aproximadamente <span class="font-medium">1 hora</span>, lo que asegura 
-                        un tiempo óptimo para abordar objetivos terapéuticos sin perder dinamismo.
-                    </p>
+
+                <!-- Duración -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                    <div class="flex items-center mb-3">
+                        <img src="img/duracion-de-las-sesiones.jpg" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Duración de las sesiones
+                        </h3>
+                    </div>
+                        <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            Las sesiones duran aproximadamente <span class="font-medium">1 hora</span>, lo que asegura 
+                            un tiempo óptimo para abordar objetivos terapéuticos sin perder dinamismo.
+                        </p>
                 </div>
-                <!-- Punto C -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 text-green-700">c) Personalización del proceso</h3>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                            <li>Se establecen objetivos claros desde el inicio.</li>
-                            <li>Se diseña un plan de trabajo acorde a cada necesidad.</li>
-                            <li>Se realiza una evaluación periódica de resultados.</li>
-                        </ul>
+
+                <!-- Personalización -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                    <div class="flex items-center mb-3">
+                        <img src="img/personalizacion-del-proceso.jpg" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Personalización del proceso
+                        </h3>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        <li>Se establecen objetivos claros desde el inicio.</li>
+                        <li>Se diseña un plan de trabajo acorde a cada necesidad.</li>
+                        <li>Se realiza una evaluación periódica de resultados.</li>
+                    </ul>
                 </div>
-                <!-- Punto D -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 text-green-700">d) Modalidad presencial a domicilio</h3>
-                    <p class="text-gray-600">
+
+                <!-- Modalidad -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                    <div class="flex items-center mb-3">
+                        <img src="img/modalidad-presencial.jpg" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Modalidad presencial a domicilio
+                        </h3>
+                    </div>
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                         Ofrezco sesiones presenciales a domicilio en <span class="font-medium">Bucaramanga y área metropolitana</span>, 
                         para recibir atención psicológica en la comodidad del hogar, con la misma calidad y acompañamiento profesional.
                     </p>
@@ -145,39 +249,50 @@
     <!-- Services Section -->
     <section id="servicios" class="py-12 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Servicios</h2>
+
+            <!-- Title-->
+            <h2 class="text-3xl font-bold text-center mb-12"
+                style="font-family: 'League Spartan', sans-serif; color: var(--negro);">
+                Servicios
+            </h2>
+
             <div class="grid md:grid-cols-3 gap-8">
                 
                 <!-- Mente Activa 60+ -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                        </svg>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                    <div class="flex items-center mb-3">
+                        <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Mente Activa 60+
+                        </h3>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Mente Activa 60+</h3>
-                    <p class="text-gray-600 mb-4">
-                        Sesiones diseñadas para estimular y mantener las <span class="font-semibold text-green-700">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        Sesiones diseñadas para estimular, mantener y potenciar las <span class="font-semibold text-[var(--verde-neon)]">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
+                    </p><br>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                         <li>Fortalecer memoria, atención y razonamiento.</li>
                         <li>Favorecer autonomía e independencia.</li>
                         <li>Ofrecer motivación, disfrute y conexión social.</li>
                     </ul>
+                    
                 </div>
 
                 <!-- Mente en Desarrollo -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                    <div class="flex items-center mb-3">
+                        <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Mente en Desarrollo
+                        </h3>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Mente en Desarrollo</h3>
-                    <p class="text-gray-600 mb-4">
-                        Acompañamiento para <span class="font-semibold text-green-700">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        Acompañamiento para <span class="font-semibold text-[var(--verde-neon)]">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
+                    </p><br>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                         <li>Estimulación de habilidades de neurodesarrollo.</li>
                         <li>Fomento de autonomía e independencia.</li>
                         <li>Herramientas de autorregulación emocional.</li>
@@ -185,19 +300,21 @@
                 </div>
 
                 <!-- Mente en Rendimiento -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-                        </svg>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                    <div class="flex items-center mb-3">
+                        <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Mente en Rendimiento
+                        </h3>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Mente en Rendimiento</h3>
-                    <p class="text-gray-600 mb-4">
-                        Servicio dirigido a <span class="font-semibold text-green-700">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li><span class="font-medium">Acompañamiento individual</span>: potenciar habilidades psicológicas y planificar metas deportivas.</li>
-                        <li><span class="font-medium">Talleres grupales</span>: fortalecer recursos internos y dinámicas de equipo.</li>
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        Servicio dirigido a <span class="font-semibold text-[var(--verde-neon)]">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
+                    </p><br>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        <li>Acompañamiento individual: potenciar habilidades psicológicas y planificar metas deportivas.</li>
+                        <li>Talleres grupales: fortalecer recursos internos y dinámicas de equipo.</li>
                     </ul>
                 </div>
             </div>
@@ -205,9 +322,15 @@
     </section>
 
     <!-- Article Section -->
-    <section id="articulos" class="py-12 bg-gray-50">
+    <section id="articulos" class="py-12 bg-[var(--gris-claro)]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Artículos Recientes</h2>
+
+            <!-- Title -->
+            <h2 class="text-3xl font-bold text-center text-[var(--negro)] mb-12" style="font-family: 'League Spartan', sans-serif;">
+                Artículos Recientes
+            </h2>
+
+            <!-- Item container -->
             <div id="articles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
     </section>
@@ -244,16 +367,35 @@
                         const content = text.replace(/^---[\s\S]*?---/, '').trim();
 
                         const card = document.createElement('div');
-                        card.className = "bg-white rounded-xl overflow-hidden shadow-md";
+                        card.className = "bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition";
                         card.innerHTML = `
                             <div class="h-48 overflow-hidden">
                                 <img src="${frontmatter.image}" alt="${frontmatter.title}" class="w-full h-full object-cover" />
                             </div>
                             <div class="p-6">
-                                <span class="text-sm text-green-600">${frontmatter.category}</span>
-                                <h3 class="text-xl font-semibold mt-2 mb-3">${frontmatter.title}</h3>
-                                <p class="text-gray-600 mb-4">${frontmatter.excerpt}</p>
-                                <button class="leer-mas text-green-600 font-medium hover:text-indigo-800" data-content="${encodeURIComponent(content)}">Leer más →</button>
+
+                                <!-- Category -->
+                                <span class="text-sm font-medium" style="color: var(--verde-neon); font-family: 'Montserrat', sans-serif;">
+                                    ${frontmatter.category}
+                                </span>
+
+                                <!-- Article title -->
+                                <h3 class="text-2xl font-bold mt-2 mb-3" style="color: var(--negro); font-family: 'League Spartan', sans-serif;">
+                                    ${frontmatter.title}
+                                </h3>
+
+                                <!-- Extract -->
+                                <p class="text-base mb-4" style="color: #555; font-family: 'Montserrat', sans-serif;">
+                                    ${frontmatter.excerpt}
+                                </p>
+
+                                <!-- Button "Leer más" -->
+                                <button 
+                                    class="leer-mas font-semibold transition"
+                                    style="color: var(--verde-claro); font-family: 'Cremiss', serif;"
+                                    data-content="${encodeURIComponent(content)}">
+                                    Leer más →
+                                </button>
                             </div>
                         `;
                         container.appendChild(card);
@@ -280,45 +422,74 @@
         });
     </script>
 
+    <!-- Contact -->
+    <section id="contacto" class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+
+            <!-- Título -->
+            <h2 class="text-4xl font-bold mb-8" style="font-family: 'League Spartan', sans-serif; color: var(--negro);">
+                Contacto
+            </h2>
+
+            <!-- Caja con mensaje -->
+            <div class="bg-[var(--gris-claro)] text-black p-4 rounded-2xl shadow-md max-w-md mx-auto">
+                <p class="text-xl font-medium" style="font-family: 'Montserrat', sans-serif;">
+                    Estoy interesado en saber más.
+                </p>
+            
+                <!-- Redes sociales -->
+                <div class="flex justify-center space-x-8 mt-10">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/sofiaparedes.psi" target="_blank" class="hover:scale-110 transition-transform">
+                        <img src="https://cdn-icons-png.flaticon.com/512/15707/15707749.png" 
+                            alt="Instagram" class="w-14 h-14">
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/573226862397" target="_blank" class="hover:scale-110 transition-transform">
+                        <img src="https://cdn-icons-png.flaticon.com/512/15707/15707820.png" 
+                            alt="WhatsApp" class="w-14 h-14">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer class="bg-neutral-900 text-white py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">PsicoAyuda</h3>
-                    <p class="text-white-400">Servicios profesionales de psicología para tu bienestar emocional y crecimiento personal.</p>
+                    <h3 class="text-lg font-semibold mb-4">Sofía Paredes Psicóloga</h3>
+                    <p class="text-white-400">Transformando la mente y el cuerpo de personas y familias que buscan fortalecer la autoconfianza, autonomía y bienestar integral.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Servicios</h3>
                     <ul class="space-y-2">
-                        <li><a class="text-white-400 hover:text-white">Terapia Individual</a></li>
-                        <li><a class="text-white-400 hover:text-white">Terapia de Pareja</a></li>
-                        <li><a class="text-white-400 hover:text-white">Terapia Familiar</a></li>
+                        <li><a class="text-white-400 hover:text-white">Mente Activa 60+</a></li>
+                        <li><a class="text-white-400 hover:text-white">Mente en Desarrollo</a></li>
+                        <li><a class="text-white-400 hover:text-white">Mente en Rendimiento</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Contacto</h3>
                     <ul class="space-y-2">
                         <li class="text-white-400">info@psicoayuda.com</li>
-                        <li class="text-white-400">+1 234 567 890</li>
+                        <li class="text-white-400">+57 322 6862397</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Redes Sociales</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-white-400 hover:text-white">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-white-400 hover:text-white">
+                        <a href="https://www.instagram.com/sofiaparedes.psi" class="text-white-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                             </svg>
                         </a>
-                        <a href="#" class="text-white-400 hover:text-white">
+                        <a href="https://wa.me/573226862397" class="text-white-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                <path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.119.551 4.182 1.595 6.01L0 24l6.174-1.623A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-3.192-1.244-6.197-3.48-8.52zM12 22.08c-1.929 0-3.79-.52-5.414-1.503l-.387-.228-3.665.965.978-3.57-.252-.388A9.995 9.995 0 012.04 12c0-5.493 4.467-9.96 9.96-9.96 2.663 0 5.167 1.037 7.055 2.925A9.947 9.947 0 0121.96 12c0 5.493-4.467 9.96-9.96 9.96zm5.52-7.44c-.301-.15-1.779-.879-2.055-.978-.276-.101-.477-.15-.678.15-.2.3-.778.978-.954 1.178-.176.2-.352.226-.653.075-.301-.15-1.273-.468-2.426-1.491-.896-.8-1.501-1.788-1.677-2.089-.176-.3-.019-.462.132-.612.136-.136.301-.352.452-.527.151-.176.2-.301.301-.502.1-.2.05-.377-.025-.527-.075-.15-.678-1.627-.928-2.229-.244-.586-.494-.506-.678-.516l-.578-.01c-.2 0-.527.075-.803.377-.276.301-1.055 1.03-1.055 2.507s1.081 2.908 1.231 3.109c.15.2 2.127 3.247 5.162 4.552.722.312 1.285.498 1.724.639.724.23 1.383.198 1.905.12.581-.086 1.779-.727 2.029-1.429.25-.703.25-1.304.176-1.429-.075-.125-.276-.2-.577-.35z"/>
                             </svg>
                         </a>
                     </div>
