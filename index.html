@@ -117,8 +117,6 @@
                         <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Sobre mí</a>
                         <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Metodología</a>
                         <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Servicios</a>
-                        <a href="#articulos" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Artículos</a>
-                        <a href="#contacto" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Contacto</a>
                     </div>
                 </div>
             </div>
@@ -126,13 +124,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="bg-[var(--verde-neon)] text-white py-5 w-full">
-        <div class="w-full px-3 md:px-6">
-            <div class="flex flex-col md:flex-row items-center justify-center text-center">
-                <div class="md:w-3/4 lg:w-2/3">
-                    <p class="text-lg md:text-xl font-['Montserrat']">Transformando la mente y el cuerpo de personas y familias que buscan fortalecer la autoconfianza, autonomía y bienestar integral.</p>
-                </div>
-            </div>
+    <section class="relative bg-[url('https://plus.unsplash.com/premium_photo-1677130461825-a6af681e401b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8')] bg-cover bg-center h-[250px] flex items-center justify-center">
+        <!-- Capa oscura -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Contenido -->
+        <div class="relative text-center px-6 max-w-3xl">
+            <p class="text-white text-lg mb-4">
+                Desde que descubrí el poder de la actividad física en la mente, mi misión ha sido
+                acompañar a personas y familias a mejorar su calidad de vida a través del arte, el
+                movimiento y la psicología.
+            </p>
+            <p class="text-white text-lg">
+                Si quieres conocer más, explora este espacio y aprende herramientas gratuitas sobre
+                el bienestar de tu mente y tu cuerpo.
+            </p>
         </div>
     </section>
 
@@ -182,8 +188,83 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="servicios" class="py-12 bg-[var(--gris-claro)]">
+        <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
+
+            <!-- Title-->
+            <h2 class="text-3xl font-bold text-center mb-12"
+                style="font-family: 'League Spartan', sans-serif; color: var(--negro);">
+                Servicios
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Mente Activa 60+ -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                    <div class="flex items-center mb-3">
+                        <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Mente Activa 60+
+                        </h3>
+                    </div>
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        Sesiones diseñadas para estimular, mantener y potenciar las <span class="font-semibold text-[var(--verde-neon)]">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
+                    </p><br>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        <li>Fortalecer memoria, atención y razonamiento.</li>
+                        <li>Favorecer autonomía e independencia.</li>
+                        <li>Ofrecer motivación, disfrute y conexión social.</li>
+                    </ul>
+                    
+                </div>
+
+                <!-- Mente en Desarrollo -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                    <div class="flex items-center mb-3">
+                        <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Mente en Desarrollo
+                        </h3>
+                    </div>
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        Acompañamiento para <span class="font-semibold text-[var(--verde-neon)]">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
+                    </p><br>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        <li>Estimulación de habilidades de neurodesarrollo.</li>
+                        <li>Fomento de autonomía e independencia.</li>
+                        <li>Herramientas de autorregulación emocional.</li>
+                    </ul>
+                </div>
+
+                <!-- Mente en Rendimiento -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                    <div class="flex items-center mb-3">
+                        <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
+                        <h3 class="text-xl font-semibold"
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            Mente en Rendimiento
+                        </h3>
+                    </div>
+                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        Servicio dirigido a <span class="font-semibold text-[var(--verde-neon)]">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
+                    </p><br>
+                    <ul class="list-disc pl-5 space-y-2"
+                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                        <li>Acompañamiento individual: potenciar habilidades psicológicas y planificar metas deportivas.</li>
+                        <li>Talleres grupales: fortalecer recursos internos y dinámicas de equipo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Metodología Section -->
-    <section id="metodologia" class="py-12 bg-[var(--gris-claro)]">
+    <section id="metodologia" class="py-12 bg-white">
         <div class="max-w-6xl mx-auto px-6 lg:px-8">
 
             <!-- Title-->
@@ -267,82 +348,6 @@
         </div>
     </section>
 
-
-    <!-- Services Section -->
-    <section id="servicios" class="py-12 bg-white">
-        <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
-
-            <!-- Title-->
-            <h2 class="text-3xl font-bold text-center mb-12"
-                style="font-family: 'League Spartan', sans-serif; color: var(--negro);">
-                Servicios
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Mente Activa 60+ -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
-                    <div class="flex items-center mb-3">
-                        <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
-                            Mente Activa 60+
-                        </h3>
-                    </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Sesiones diseñadas para estimular, mantener y potenciar las <span class="font-semibold text-[var(--verde-neon)]">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
-                    </p><br>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Fortalecer memoria, atención y razonamiento.</li>
-                        <li>Favorecer autonomía e independencia.</li>
-                        <li>Ofrecer motivación, disfrute y conexión social.</li>
-                    </ul>
-                    
-                </div>
-
-                <!-- Mente en Desarrollo -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
-                    <div class="flex items-center mb-3">
-                        <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
-                            Mente en Desarrollo
-                        </h3>
-                    </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Acompañamiento para <span class="font-semibold text-[var(--verde-neon)]">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
-                    </p><br>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Estimulación de habilidades de neurodesarrollo.</li>
-                        <li>Fomento de autonomía e independencia.</li>
-                        <li>Herramientas de autorregulación emocional.</li>
-                    </ul>
-                </div>
-
-                <!-- Mente en Rendimiento -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
-                    <div class="flex items-center mb-3">
-                        <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
-                            Mente en Rendimiento
-                        </h3>
-                    </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Servicio dirigido a <span class="font-semibold text-[var(--verde-neon)]">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
-                    </p><br>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Acompañamiento individual: potenciar habilidades psicológicas y planificar metas deportivas.</li>
-                        <li>Talleres grupales: fortalecer recursos internos y dinámicas de equipo.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Article Section -->
     <section id="articulos" class="py-12 bg-[var(--gris-claro)]">
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
@@ -390,6 +395,18 @@
         </div>
     </section>
 
+    <section class="relative bg-[url('https://plus.unsplash.com/premium_photo-1677130461825-a6af681e401b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8')] bg-cover bg-center h-[175px] flex items-center justify-center">
+        <!-- Capa oscura -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Contenido -->
+        <div class="relative text-center px-6 max-w-3xl">
+            <p class="text-white text-lg mb-4">
+                Te espero para que juntos elevemos tu calidad de vida y la de tu familia.
+            </p>
+        </div>
+    </section>
+
     <!-- Botón flotante de WhatsApp -->
     <div class="group fixed bottom-6 right-6 z-50">
         <a href="https://wa.me/573226862397" 
@@ -408,7 +425,7 @@
 
 
     <!-- Footer -->
-    <footer class="bg-neutral-900 text-white py-12">
+    <footer class="bg-[#C8E6C9] text-black py-12">
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
@@ -418,9 +435,9 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Servicios</h3>
                     <ul class="space-y-2">
-                        <li><a class="text-white-400 hover:text-white">Mente Activa 60+</a></li>
-                        <li><a class="text-white-400 hover:text-white">Mente en Desarrollo</a></li>
-                        <li><a class="text-white-400 hover:text-white">Mente en Rendimiento</a></li>
+                        <li><a class="text-white-400">Mente Activa 60+</a></li>
+                        <li><a class="text-white-400">Mente en Desarrollo</a></li>
+                        <li><a class="text-white-400">Mente en Rendimiento</a></li>
                     </ul>
                 </div>
                 <div>
@@ -446,9 +463,9 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-white-700 text-center text-white-400">
+            <div class="mt-8 pt-8 border-t border-black text-center text-white-400">
                 <p>© 2025 Desarrollado por 
-                    <a href="https://androshomine13.github.io/portafolio-androshomine13/" target="_blank" style="text-decoration: underline; color: rgb(170, 170, 170);">
+                    <a href="https://androshomine13.github.io/portafolio-androshomine13/" target="_blank" style="text-decoration: underline; color: rgb(60, 60, 60);">
                         Andrés Vargas</a>. Todos los derechos reservados.
                 </p>
             </div>
