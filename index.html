@@ -654,6 +654,21 @@
     </div>
 
     <script>
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById("promoModal").classList.remove("hidden");
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById("promoModal").classList.add("hidden");
+        }
+
+        // Mostrar el modal automáticamente al cargar la página
+        window.addEventListener("DOMContentLoaded", () => {
+            openModal();
+        });
+
         const formReserva = document.getElementById("formReserva");
         const mensajeExitoReserva = document.getElementById("mensajeExito");
 
@@ -669,9 +684,19 @@
                     body: new URLSearchParams(formData).toString(),
                 })
                 .then(() => {
-                    formReserva.classList.add("hidden"); // ocultar el form
-                    mensajeExitoReserva.classList.remove("hidden"); // mostrar éxito
+                    // Ocultar el formulario y mostrar el mensaje de éxito
+                    formReserva.classList.add("hidden");
+                    mensajeExitoReserva.classList.remove("hidden");
+
+                    // Resetear el form para la próxima vez
                     formReserva.reset();
+
+                    // Después de 2 segundos, cerrar modal y restaurar el formulario
+                    setTimeout(() => {
+                        closeModal();
+                        formReserva.classList.remove("hidden");
+                        mensajeExitoReserva.classList.add("hidden");
+                    }, 1500);
                 })
                 .catch((error) => alert("❌ Error al enviar la reserva: " + error));
             });
