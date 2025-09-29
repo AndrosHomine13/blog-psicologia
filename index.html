@@ -493,10 +493,11 @@
                 </button>
             </form>
 
-            <!-- Mensaje de éxito oculto -->
-            <p id="mensajeExitoContacto" class="text-green-600 font-semibold mt-4 hidden text-center">
-                ✅ ¡Mensaje enviado con éxito!
-            </p>
+            <div id="mensajeExito" class="hidden text-center">
+                <h2 class="text-2xl font-bold text-[var(--verde-azul)] mb-3 font-['League_Spartan']">
+                    ✅ ¡Reserva enviada con éxito!
+                </h2>
+            </div>
         </div>
     </section>
 
@@ -617,10 +618,11 @@
                 </button>
             </form>
 
-            <!-- Mensaje de éxito oculto -->
-            <p id="mensajeExito" class="text-green-600 font-semibold mt-4 hidden">
-                ✅ ¡Reserva enviada con éxito!
-            </p>
+            <div id="mensajeExito" class="hidden text-center">
+                <h2 class="text-2xl font-bold text-[var(--verde-azul)] mb-3 font-['League_Spartan']">
+                    ✅ ¡Reserva enviada con éxito!
+                </h2>
+            </div>
         </div>
     </div>
 
@@ -655,15 +657,9 @@
                 body: new URLSearchParams(formData).toString(),
             })
             .then(() => {
-                // Mostrar mensaje de éxito
+                formContainer.classList.add("hidden");
                 mensajeExito.classList.remove("hidden");
-
-                // Cerrar modal después de un tiempo
-                setTimeout(() => {
-                    closeModal();
-                    form.reset();
-                    mensajeExito.classList.add("hidden");
-                }, 1500);
+                form.reset();
             })
             .catch((error) => {
                 alert("❌ Error al enviar: " + error);
