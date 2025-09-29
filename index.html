@@ -153,20 +153,20 @@
         
             <!-- Logo -->
             <img src="logo.svg" alt="Sofía Paredes Psicóloga" id="hero-logo" 
-                class="mx-auto w-64 md:w-80 mb-6 transition-all duration-700">
+                class="mx-auto w-64 md:w-80 mb-8 transition-all duration-700">
 
             <!-- Texto -->
-            <p class="text-lg mb-4">
+            <p class="text-xl mb-4">
                 Desde que descubrí el <span class="font-bold">poder de la actividad física</span> en la mente,
                 mi misión ha sido <span class="font-bold">acompañar a personas y familias a mejorar su calidad de vida</span>
                 a través del arte, el movimiento y la psicología.
             </p>
-            <p class="text-lg mb-6">
+            <p class="text-xl mb-6">
                 Si quieres conocer más, <span class="font-bold">sígueme en Instagram</span> para aprender
                 <span class="font-bold">herramientas gratuitas</span> sobre el bienestar de tu <span class="font-bold">mente</span> y tu <span class="font-bold">cuerpo</span>.
             </p>
             <a href="https://instagram.com/sofiaparedes.psi" target="_blank" id="hero-btn"
-                class="bg-[var(--rosa)] text-gray-800 px-6 py-3 rounded-full shadow-lg hover:bg-[var(--rosa)]transition">
+                class="bg-[var(--rosa)] text-xl font-['Cremiss'] text-black px-8 py-3 rounded-full shadow-lg hover:bg-[var(--rosa)]">
                 ¡Sígueme en Instagram!
             </a>
         </div>
@@ -211,13 +211,6 @@
     <!-- About me-->
     <section id="sobre-mi" class="py-12 bg-white">
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
-
-            <!-- Title -->
-            <h2 class="text-3xl text-center mb-12"
-                style="font-family: 'League Spartan', sans-serif; font-weight: 700; color: var(--negro);">
-                Sobre mí
-            </h2>
-
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Imagen -->
                 <div class="relative flex justify-center">
@@ -261,162 +254,195 @@
     <!-- Services Section -->
     <section id="servicios" class="py-12 bg-[var(--gris-claro)]">
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
-
             <!-- Title-->
-            <h2 class="text-3xl font-bold text-center mb-12"
-                style="font-family: 'League Spartan', sans-serif; color: var(--negro);">
-                Servicios
+            <h2 class="text-5xl text-center mb-12" style="font-family: 'Cremiss', serif; color: var(--negro);">
+                Conoce mis servicios
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8">
-                
+      
                 <!-- Mente Activa 60+ -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition">
-                    <div class="flex items-center mb-3">
-                        <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Mente Activa 60+
-                        </h3>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                                style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                Mente Activa 60+
+                            </h3>
+                        </div>
+                        <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            Sesiones diseñadas para estimular, mantener y potenciar las 
+                            <span class="font-semibold text-[var(--verde-azul)]">funciones cognitivas de adultos mayores</span> 
+                            mediante psicología y actividad física.
+                        </p><br>
+                        <ul class="list-disc pl-5 space-y-2"
+                            style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            <li>Fortalecer memoria, atención y razonamiento.</li>
+                            <li>Favorecer autonomía e independencia.</li>
+                            <li>Ofrecer motivación, disfrute y conexión social.</li>
+                        </ul>
                     </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Sesiones diseñadas para estimular, mantener y potenciar las <span class="font-semibold text-[var(--verde-azul)]">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
-                    </p><br>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Fortalecer memoria, atención y razonamiento.</li>
-                        <li>Favorecer autonomía e independencia.</li>
-                        <li>Ofrecer motivación, disfrute y conexión social.</li>
-                    </ul>
-                    
+                    <!-- Botón -->
+                    <div class="mt-6 flex justify-center">
+                        <a href="https://wa.me/573226862397" target="_blank" 
+                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-xl px-10 py-3 rounded-full">
+                            Agenda tu sesión
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Mente en Desarrollo -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition">
-                    <div class="flex items-center mb-3">
-                        <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Mente en Desarrollo
-                        </h3>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                              style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                  Mente en Desarrollo
+                            </h3>
+                        </div>
+                        <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            Acompañamiento para 
+                            <span class="font-semibold text-[var(--verde-azul)]">niños, niñas y adolescentes</span> 
+                            en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
+                        </p><br>
+                        <ul class="list-disc pl-5 space-y-2"
+                            style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            <li>Estimulación de habilidades de neurodesarrollo.</li>
+                            <li>Fomento de autonomía e independencia.</li>
+                            <li>Herramientas de autorregulación emocional.</li>
+                        </ul>
                     </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Acompañamiento para <span class="font-semibold text-[var(--verde-azul)]">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
-                    </p><br>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Estimulación de habilidades de neurodesarrollo.</li>
-                        <li>Fomento de autonomía e independencia.</li>
-                        <li>Herramientas de autorregulación emocional.</li>
-                    </ul>
+                    <!-- Botón -->
+                    <div class="mt-6 flex justify-center">
+                        <a href="https://wa.me/573226862397" target="_blank" 
+                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-xl px-10 py-3 rounded-full">
+                            Agenda tu sesión
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Mente en Rendimiento -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition">
-                    <div class="flex items-center mb-3">
-                        <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Mente en Rendimiento
-                        </h3>
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                                style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                Mente en Rendimiento
+                            </h3>
+                        </div>
+                        <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            Servicio dirigido a 
+                            <span class="font-semibold text-[var(--verde-azul)]">deportistas y artistas</span> 
+                            que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
+                        </p><br>
+                        <ul class="list-disc pl-5 space-y-2"
+                            style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            <li>Acompañamiento individual: potenciar habilidades psicológicas y planificar metas deportivas.</li>
+                            <li>Talleres grupales: fortalecer recursos internos y dinámicas de equipo.</li>
+                        </ul>
                     </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Servicio dirigido a <span class="font-semibold text-[var(--verde-azul)]">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
-                    </p><br>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Acompañamiento individual: potenciar habilidades psicológicas y planificar metas deportivas.</li>
-                        <li>Talleres grupales: fortalecer recursos internos y dinámicas de equipo.</li>
-                    </ul>
+                    <!-- Botón -->
+                    <div class="mt-6 flex justify-center">
+                        <a href="https://wa.me/573226862397" target="_blank" 
+                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-xl px-10 py-3 rounded-full">
+                            Agenda tu sesión
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Metodología Section -->
     <section id="metodologia" class="py-12 bg-white">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
-
-            <!-- Title-->
-            <h2 class="text-3xl text-center mb-12"
-                style="font-family: 'League Spartan', sans-serif; color: var(--negro); font-weight:700;">
-                Metodología
-            </h2>
-    
-            <!-- Introduction -->
-            <p class="text-lg text-center max-w-3xl mx-auto mb-12"
-                style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                En cada proceso combino la ciencia de la psicología con estrategias prácticas y dinámicas, 
-                para que los pacientes logren <span class="font-semibold" style="color: var(--verde-azul);">cambios reales y sostenibles</span>.
-            </p>
-
-            <!-- Types of Metodology -->
-            <div class="grid md:grid-cols-2 gap-8">
-
-                <!-- Tipo de intervención -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
-                    <div class="flex items-center mb-3">
-                        <img src="img/tipo-de-intervencion.jpg" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Tipo de intervención
-                        </h3>
-                    </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Trabajo con un enfoque <span class="font-medium">cognitivo-conductual</span> integrado con 
-                        actividad física, movimiento corporal y arte, lo que favorece la conexión entre mente y cuerpo.
-                    </p>
-                </div>
-
-                <!-- Duración -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
-                    <div class="flex items-center mb-3">
-                        <img src="img/duracion-de-las-sesiones.jpg" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Duración de las sesiones
-                        </h3>
-                    </div>
+        <div class="w-full px-6">
+            <!-- Grid con la imagen al centro -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <!-- Columna izquierda -->
+                <div class="space-y-8">
+                    <!-- Duración -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
+                        <div class="flex items-center mb-3">
+                            <img src="img/duracion-de-las-sesiones.jpg" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                                style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                Duración de las sesiones
+                            </h3>
+                        </div>
                         <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                             Las sesiones duran aproximadamente <span class="font-medium">1 hora</span>, lo que asegura 
                             un tiempo óptimo para abordar objetivos terapéuticos sin perder dinamismo.
                         </p>
+                    </div>
+
+                    <!-- Modalidad -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
+                        <div class="flex items-center mb-3">
+                            <img src="img/modalidad-presencial.jpg" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                                style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                Modalidad presencial a domicilio
+                            </h3>
+                        </div>
+                        <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            Ofrezco sesiones presenciales a domicilio en <span class="font-medium">Bucaramanga y área metropolitana</span>, 
+                            para recibir atención psicológica en la comodidad del hogar, con la misma calidad y acompañamiento profesional.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Personalización -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
-                    <div class="flex items-center mb-3">
-                        <img src="img/personalizacion-del-proceso.jpg" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Personalización del proceso
-                        </h3>
-                    </div>
-                    <ul class="list-disc pl-5 space-y-2"
-                        style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        <li>Se establecen objetivos claros desde el inicio.</li>
-                        <li>Se diseña un plan de trabajo acorde a cada necesidad.</li>
-                        <li>Se realiza una evaluación periódica de resultados.</li>
-                    </ul>
+                <!-- Centro -->
+                <div class="space-y-8">
+                    <!-- Title -->
+                    <h2 class="text-5xl text-center mb-10" style="font-family: 'Cremiss', serif; color: var(--negro);">
+                        Mi metodología
+                    </h2>
+                    <img src="https://media.canva.com/v2/image-resize/format:JPG/height:800/quality:92/uri:ifs%3A%2F%2FM%2Fba32fcf2-96aa-401f-aaeb-253c1d456c92/watermark:F/width:640?csig=AAAAAAAAAAAAAAAAAAAAANNqEDfoOVlZdBo7D0D0mZaRjbSSb1ZSjFTHl1C-Hcsm&exp=1759129975&osig=AAAAAAAAAAAAAAAAAAAAAANy-MuLmgLAA_AzFwkaKJC3mkhEztXgFY8P1fY_q3d7&signer=media-rpc&x-canva-quality=screen"
+                        alt="Mi metodología"
+                        class="max-w-xs mx-auto rounded-lg">
                 </div>
 
-                <!-- Modalidad -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
-                    <div class="flex items-center mb-3">
-                        <img src="img/modalidad-presencial.jpg" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
-                        <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
-                            Modalidad presencial a domicilio
-                        </h3>
+                <!-- Columna derecha -->
+                <div class="space-y-8">
+                    <!-- Tipo de intervención -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
+                        <div class="flex items-center mb-3">    
+                            <img src="img/tipo-de-intervencion.jpg" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                                style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                Tipo de intervención
+                            </h3>
+                        </div>
+                        <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            Trabajo con un enfoque <span class="font-medium">cognitivo-conductual</span> integrado con 
+                            actividad física, movimiento corporal y arte, lo que favorece la conexión entre mente y cuerpo.
+                        </p>
                     </div>
-                    <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Ofrezco sesiones presenciales a domicilio en <span class="font-medium">Bucaramanga y área metropolitana</span>, 
-                        para recibir atención psicológica en la comodidad del hogar, con la misma calidad y acompañamiento profesional.
-                    </p>
+
+                    <!-- Personalización -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
+                        <div class="flex items-center mb-3">    
+                            <img src="img/personalizacion-del-proceso.jpg" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
+                            <h3 class="text-xl font-semibold"
+                                style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
+                                Personalización del proceso
+                            </h3>
+                        </div>
+                        <ul class="list-disc pl-5 space-y-2"
+                            style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                            <li>Se establecen objetivos claros desde el inicio.</li>
+                            <li>Se diseña un plan de trabajo acorde a cada necesidad.</li>
+                            <li>Se realiza una evaluación periódica de resultados.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
 
     <!-- Contact -->
     <section id="contacto" class="py-12 bg-[var(--verde-apagado)]">
@@ -437,10 +463,20 @@
 
         <div class="max-w-lg mx-auto px-6 text-center text-[var(--negro)]">
             <!-- Formulario -->
-            <form class="space-y-4">
+            <form 
+                name="reserva" 
+                method="POST" 
+                data-netlify="true" 
+                id="formReserva" 
+                class="space-y-4"
+                netlify>
+
+                <!-- Campo oculto obligatorio para Netlify -->
+                <input type="hidden" name="form-name" value="contacto">
+
                 <!-- Nombre -->
                 <div class="relative">
-                    <input type="text" placeholder="Nombre..." required
+                    <input type="text" placeholder="Nombre..." name="nombre" required
                         class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
                     <span class="absolute right-3 top-3 text-gray-400">👤</span>
                     <span class="absolute right-1 top-0 text-red-500">*</span>
@@ -448,7 +484,7 @@
 
                 <!-- Email -->
                 <div class="relative">
-                    <input type="email" placeholder="Email..." required
+                    <input type="email" placeholder="Email..." name="email" required
                         class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
                     <span class="absolute right-3 top-3 text-gray-400">✉️</span>
                     <span class="absolute right-1 top-0 text-red-500">*</span>
@@ -460,6 +496,11 @@
                     Enviar
                 </button>
             </form>
+
+            <!-- Mensaje de éxito oculto -->
+            <p id="mensajeExitoContacto" class="text-green-600 font-semibold mt-4 hidden text-center">
+                ✅ ¡Mensaje enviado con éxito!
+            </p>
         </div>
     </section>
 
