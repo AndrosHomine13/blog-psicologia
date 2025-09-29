@@ -472,28 +472,24 @@
                 netlify>
 
                 <!-- Campo oculto obligatorio para Netlify -->
-                <input type="hidden" name="form-name" value="contacto">
+                <input type="hidden" name="form-name" value="reserva">
 
-                <!-- Nombre -->
-                <div class="relative">
-                    <input type="text" placeholder="Nombre..." name="nombre" required
-                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
-                    <span class="absolute right-3 top-3 text-gray-400">👤</span>
-                    <span class="absolute right-1 top-0 text-red-500">*</span>
+                <div>
+                    <input type="text" placeholder="Nombre" id="nombre" name="nombre" required class="w-full p-2 border rounded">
                 </div>
 
-                <!-- Email -->
-                <div class="relative">
-                    <input type="email" placeholder="Email..." name="email" required
-                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
-                    <span class="absolute right-3 top-3 text-gray-400">✉️</span>
-                    <span class="absolute right-1 top-0 text-red-500">*</span>
+                <div>
+                    <input type="email" placeholder="Email" id="correo" name="correo" required class="w-full p-2 border rounded">
                 </div>
 
-                <!-- Botón -->
-                <button type="submit"
-                    class="bg-[var(--verde-azul)] text-white font-['cremiss'] text-2xl py-3 px-10 rounded-full mx-auto block">
-                    Enviar
+                <div>
+                    <input type="tel" placeholder="Teléfono"  id="telefono" name="telefono" required class="w-full p-2 border rounded">
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="w-full bg-[var(--verde-azul)] text-white py-2 rounded-lg font-bold">
+                        Enviar
                 </button>
             </form>
 
@@ -649,6 +645,9 @@
             // Crear objeto con datos del formulario
             const formData = new FormData(form);
 
+            // Asegurar que el form-name se envíe
+            formData.append("form-name", "reserva");
+
             // Enviar a Netlify Forms usando fetch
             fetch("/", {
                 method: "POST",
@@ -656,16 +655,19 @@
                 body: new URLSearchParams(formData).toString(),
             })
             .then(() => {
-                // Mostrar mensaje y cerrar modal
+                // Mostrar mensaje de éxito
                 mensajeExito.classList.remove("hidden");
 
+                // Cerrar modal después de un tiempo
                 setTimeout(() => {
                     closeModal();
                     form.reset();
                     mensajeExito.classList.add("hidden");
-                }, 1000);
+                }, 1500);
             })
-            .catch((error) => alert("❌ Error al enviar la reserva: " + error));
+            .catch((error) => {
+                alert("❌ Error al enviar: " + error);
+            });
         });
     </script>
 
