@@ -25,10 +25,12 @@
 
         /* Colores */
         :root {
-            --verde-neon: rgb(192, 235, 32);
+            --verde-azul: rgb(49, 104, 100);
             --negro: rgb(0, 0, 0);
-            --verde-claro: rgb(217, 255, 183);
-            --gris-claro: rgb(245, 245, 245);
+            --rosa: rgb(238,226,215);
+            --gris-claro: rgb(245,245,245);
+            --turquesa: rgb(187,214,209);
+            --verde-apagado: rgb(147,194,160);
         }
 
         /* Navbar */
@@ -103,45 +105,108 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="w-full px-2">
+    <nav id="main-nav" 
+        class="bg-white shadow-md sticky top-0 z-50 hidden">
+        <div class="w-full px-4">
             <div class="flex justify-between items-center h-16">
+            
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-3xl font-['League_Spartan'] uppercase text-[var(--verde-neon)]">Sofía Paredes Psicóloga</span>
+                <div>
+                    <img src="logo_nav.svg" alt="Sofía Paredes Psicóloga"
+                        class="mx-auto w-64 md:center w-80 mb-3">
                 </div>
 
                 <!-- Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-6 font-['League_Spartan'] uppercase">
-                        <a href="" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Inicio</a>
-                        <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Sobre mí</a>
-                        <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Metodología</a>
-                        <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Servicios</a>
-                    </div>
+                <div id="menu" class="hidden md:flex ml-10 items-baseline space-x-6 font-['League_Spartan'] uppercase">
+                    <a href="#hero" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Inicio</a>
+                    <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Sobre mí</a>
+                    <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Metodología</a>
+                    <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Servicios</a>
+                    <a href="#contacto" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Contacto</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Script para la animación de scroll -->
+    <script>
+        const nav = document.getElementById("main-nav");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) {
+                nav.classList.remove("hidden");
+            } else {
+                nav.classList.add("hidden");
+            }
+        });
+    </script>
+
     <!-- Hero Section -->
-    <section class="relative bg-[url('https://plus.unsplash.com/premium_photo-1677130461825-a6af681e401b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8')] bg-cover bg-center h-[325px] flex items-center justify-center">
-        <!-- Capa oscura -->
-        <div class="absolute inset-0 bg-black/50"></div>
+    <section id="hero" 
+        class="relative h-screen bg-[url('https://media-public.canva.com/5WaQk/MAFwfM5WaQk/1/tl.jpg')] bg-cover bg-center flex items-center justify-center transition-all duration-700">">
+
+        <!-- Capa color -->
+        <div class="absolute inset-0 bg-[var(--verde-azul)] opacity-90"></div>
 
         <!-- Contenido -->
-        <div class="relative text-center px-6 max-w-3xl">
-            <p class="text-white text-lg mb-4">
-                Desde que descubrí el poder de la actividad física en la mente, mi misión ha sido
-                acompañar a personas y familias a mejorar su calidad de vida a través del arte, el
-                movimiento y la psicología.
+        <div id="hero-content" class="relative text-center px-6 max-w-3xl text-white transition-all duration-700">
+        
+            <!-- Logo -->
+            <img src="logo.svg" alt="Sofía Paredes Psicóloga" id="hero-logo" 
+                class="mx-auto w-64 md:w-80 mb-6 transition-all duration-700">
+
+            <!-- Texto -->
+            <p class="text-lg mb-4">
+                Desde que descubrí el <span class="font-bold">poder de la actividad física</span> en la mente,
+                mi misión ha sido <span class="font-bold">acompañar a personas y familias a mejorar su calidad de vida</span>
+                a través del arte, el movimiento y la psicología.
             </p>
-            <p class="text-white text-lg">
-                Si quieres conocer más, explora este espacio y aprende herramientas gratuitas sobre
-                el bienestar de tu mente y tu cuerpo.
+            <p class="text-lg mb-6">
+                Si quieres conocer más, <span class="font-bold">sígueme en Instagram</span> para aprender
+                <span class="font-bold">herramientas gratuitas</span> sobre el bienestar de tu <span class="font-bold">mente</span> y tu <span class="font-bold">cuerpo</span>.
             </p>
+            <a href="https://instagram.com" target="_blank" id="hero-btn"
+                class="bg-[var(--rosa)] text-gray-800 px-6 py-3 rounded-full shadow-lg hover:bg-[var(--rosa)]transition">
+                ¡Sígueme en Instagram!
+            </a>
         </div>
     </section>
+
+    <!-- Script para la animación de scroll -->
+    <script>
+        window.addEventListener("scroll", function () {
+            const hero = document.getElementById("hero");
+            const content = document.getElementById("hero-content");
+            const logo = document.getElementById("hero-logo");
+            const btn = document.getElementById("hero-btn");
+
+            if (window.scrollY > 50) {
+                // Reducir Hero
+                hero.classList.remove("h-screen");
+                hero.classList.add("h-[325px]");
+                // Escalar contenido
+                content.classList.add("scale-90");
+                // Reducir logo
+                logo.classList.remove("w-64", "md:w-80");
+                logo.classList.add("w-40", "md:w-52");
+                // Reducir botón
+                btn.classList.remove("px-6", "py-3", "text-base");
+                btn.classList.add("px-4", "py-2", "text-sm");
+            } else {
+                // Hero a pantalla completa
+                hero.classList.add("h-screen");
+                hero.classList.remove("h-[325px]");
+                // Restaurar contenido
+                content.classList.remove("scale-90");
+                // Restaurar logo
+                logo.classList.remove("w-40", "md:w-52");
+                logo.classList.add("w-64", "md:w-80");
+                // Restaurar botón
+                btn.classList.remove("px-4", "py-2", "text-sm");
+                btn.classList.add("px-6", "py-3", "text-base");
+            }
+        });
+    </script>
 
     <!-- About me-->
     <section id="sobre-mi" class="py-12 bg-white">
@@ -154,36 +219,40 @@
             </h2>
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Imagen -->
+                <div class="relative flex justify-center">
+                    <img src="https://media.canva.com/v2/image-resize/format:JPG/height:800/quality:92/uri:ifs%3A%2F%2FM%2F056542ed-092c-4fb8-94ec-e616881e1f35/watermark:F/width:640?csig=AAAAAAAAAAAAAAAAAAAAAFprOIaoBi8cwjnRJmK-2JETwCYcOCdoPQEPppwP7kz1&exp=1759118604&osig=AAAAAAAAAAAAAAAAAAAAAJAZAAzo5YM12Bvpp4DtusbXQJsEXlTLzsw6fisk_CV0&signer=media-rpc&x-canva-quality=screen" 
+                        alt="Sofía Paredes Psicóloga"
+                        class="relative z-10 w-64 md:w-80 lg:w-96 object-contain">
+                </div>
 
-                <!-- Text -->
-                <div style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
+                <!-- Nombre con SVG + Texto -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <!-- Nombre con SVG -->
+                    <img src="nombre.svg" alt="Sofía Paredes Mejía" 
+                        class="w-80 md:w-[40rem] h-auto mb-1">
+                    <!-- Texto -->
+                    <div style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                     <p>
-                        Soy <span style="color: var(--verde-neon); font-weight: 600;">Psicóloga</span> egresada de la Universidad Pontificia Bolivariana, 
-                        estudiante de <span style="color: var(--verde-neon); font-weight: 600;">Entrenamiento Deportivo</span> y 
-                        <span style="color: var(--verde-neon); font-weight: 600;">bailarina profesional de Breaking</span>. 
+                        Soy <span style="color: var(--verde-azul); font-weight: 600;">Psicóloga</span> egresada de la Universidad Pontificia Bolivariana, 
+                        estudiante de <span style="color: var(--verde-azul); font-weight: 600;">Entrenamiento Deportivo</span> y 
+                        <span style="color: var(--verde-azul); font-weight: 600;">bailarina profesional de Breaking</span>. 
                         A lo largo de mi trayectoria he descubierto que la clave para transformar la calidad de vida está en 
                         trabajar el cuerpo y la mente como un sistema integrado, donde ambos se potencian mutuamente</span>.
                     </p><br>
                     <p>
                         Mi experiencia como psicóloga infantil, psicoterapeuta de población con discapacidad cognitiva 
                         y docente de baile para jóvenes y adolescentes me ha permitido 
-                        <span style="color: var(--verde-neon); font-weight: 600;">fusionar técnicas psicológicas con la actividad física y el deporte</span>. 
+                        <span style="color: var(--verde-azul); font-weight: 600;">fusionar técnicas psicológicas con la actividad física y el deporte</span>. 
                         Este enfoque busca fortalecer la conexión entre el cuerpo y los procesos cognitivos, logrando un equilibrio profundo entre lo interno y lo externo.
                     </p><br>
                     <p>
                         Gracias a esta metodología, acompaño a mis pacientes y sus familias en el camino hacia 
-                        <span style="color: var(--verde-neon); font-weight: 600;">el alcance de sus objetivos</span>, 
-                        <span style="color: var(--verde-neon); font-weight: 600;">el fortalecimiento de la autoconfianza</span> y 
-                        <span style="color: var(--verde-neon); font-weight: 600;">la mejora de su calidad de vida</span>.
+                        <span style="color: var(--verde-azul); font-weight: 600;">el alcance de sus objetivos</span>, 
+                        <span style="color: var(--verde-azul); font-weight: 600;">el fortalecimiento de la autoconfianza</span> y 
+                        <span style="color: var(--verde-azul); font-weight: 600;">la mejora de su calidad de vida</span>.
                     </p>
-                </div>
-
-                <!-- Imagen -->
-                <div class="flex justify-center">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/86a9a52f-fba6-4f34-a924-5be26ee0ec8f.png" 
-                        alt="Psicóloga profesional sonriente en consultorio moderno con plantas y luz natural" 
-                        class="rounded-2xlw-3/4 md:w-2/3 lg:w-1/2 border-4 hover:shadow-xl transition"
-                        style="border-color: var(--verde-claro);">
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,16 +271,16 @@
             <div class="grid md:grid-cols-3 gap-8">
                 
                 <!-- Mente Activa 60+ -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition">
                     <div class="flex items-center mb-3">
                         <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Mente Activa 60+
                         </h3>
                     </div>
                     <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Sesiones diseñadas para estimular, mantener y potenciar las <span class="font-semibold text-[var(--verde-neon)]">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
+                        Sesiones diseñadas para estimular, mantener y potenciar las <span class="font-semibold text-[var(--verde-azul)]">funciones cognitivas de adultos mayores</span> mediante psicología y actividad física.
                     </p><br>
                     <ul class="list-disc pl-5 space-y-2"
                         style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
@@ -223,16 +292,16 @@
                 </div>
 
                 <!-- Mente en Desarrollo -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition">
                     <div class="flex items-center mb-3">
                         <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Mente en Desarrollo
                         </h3>
                     </div>
                     <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Acompañamiento para <span class="font-semibold text-[var(--verde-neon)]">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
+                        Acompañamiento para <span class="font-semibold text-[var(--verde-azul)]">niños, niñas y adolescentes</span> en su desarrollo cognitivo, emocional y social mediante estrategias lúdicas y terapéuticas.
                     </p><br>
                     <ul class="list-disc pl-5 space-y-2"
                         style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
@@ -243,16 +312,16 @@
                 </div>
 
                 <!-- Mente en Rendimiento -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-neon)] hover:shadow-xl transition">
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition">
                     <div class="flex items-center mb-3">
                         <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Mente en Rendimiento
                         </h3>
                     </div>
                     <p style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
-                        Servicio dirigido a <span class="font-semibold text-[var(--verde-neon)]">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
+                        Servicio dirigido a <span class="font-semibold text-[var(--verde-azul)]">deportistas y artistas</span> que desean fortalecer la conexión mente-cuerpo y alcanzar un rendimiento óptimo.
                     </p><br>
                     <ul class="list-disc pl-5 space-y-2"
                         style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
@@ -278,18 +347,18 @@
             <p class="text-lg text-center max-w-3xl mx-auto mb-12"
                 style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                 En cada proceso combino la ciencia de la psicología con estrategias prácticas y dinámicas, 
-                para que los pacientes logren <span class="font-semibold" style="color: var(--verde-neon);">cambios reales y sostenibles</span>.
+                para que los pacientes logren <span class="font-semibold" style="color: var(--verde-azul);">cambios reales y sostenibles</span>.
             </p>
 
             <!-- Types of Metodology -->
             <div class="grid md:grid-cols-2 gap-8">
 
                 <!-- Tipo de intervención -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                     <div class="flex items-center mb-3">
                         <img src="img/tipo-de-intervencion.jpg" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Tipo de intervención
                         </h3>
                     </div>
@@ -300,11 +369,11 @@
                 </div>
 
                 <!-- Duración -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                     <div class="flex items-center mb-3">
                         <img src="img/duracion-de-las-sesiones.jpg" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Duración de las sesiones
                         </h3>
                     </div>
@@ -315,11 +384,11 @@
                 </div>
 
                 <!-- Personalización -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                     <div class="flex items-center mb-3">
                         <img src="img/personalizacion-del-proceso.jpg" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Personalización del proceso
                         </h3>
                     </div>
@@ -332,11 +401,11 @@
                 </div>
 
                 <!-- Modalidad -->
-                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-neon);">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                     <div class="flex items-center mb-3">
                         <img src="img/modalidad-presencial.jpg" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
                         <h3 class="text-xl font-semibold"
-                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-neon);">
+                            style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                             Modalidad presencial a domicilio
                         </h3>
                     </div>
@@ -347,64 +416,50 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Article Section -->
-    <section id="articulos" class="py-12 bg-[var(--gris-claro)]">
-        <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
-
-            <!-- Title -->
-            <h2 class="text-3xl font-bold text-center text-[var(--negro)] mb-12" style="font-family: 'League Spartan', sans-serif;">
-                Collage...
-            </h2>
-        </div>
-    </section>  
+    </section> 
 
     <!-- Contact -->
-    <section id="inicio" class="bg-[var(--verde-neon)] text-white py-12 px-4 text-center">
-        <div class="max-w-3xl mx-auto">
+    <section id="contacto" class="py-12 bg-[var(--verde-apagado)]">
+        <div class="max-w-full mx-auto text-center text-[var(--negro)]">
             <!-- Título -->
-            <h2 class="text-2xl md:text-3xl font-['League_Spartan'] font-bold mb-4">
-                ¡Da ese primer paso y reserva tu cita ahora mismo!
+            <h2 class="text-xl md:text-3xl font-['Nourd'] uppercase tracking-[0.4em] mb-1">
+                ¡Tu primera
             </h2>
+            <h3 class="text-3xl md:text-5xl font-['Cremiss'] mb-6">
+                valoración es gratis!
+            </h3>
+
             <!-- Subtítulo -->
-            <p class="text-base md:text-lg mb-8 text-gray-100">
-                Tu salud emocional merece atención y cuidado. Comienza tu transformación personal hoy.
+            <p class="text-lg md:text-3xl font-['Nourd'] mb-12">
+                Completa tus datos para recibir más información
             </p>
-            <!-- Botones -->
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <!-- Botón Llamar -->
-                <a href="tel:+573226862397"
-                    class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--verde-neon)] font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 5a2 2 0 012-2h3.28a2 2 0 011.94 1.5l.58 2.32a2 2 0 01-.45 1.79l-1.21 1.21a16.001 16.001 0 006.58 6.58l1.21-1.21a2 2 0 011.79-.45l2.32.58A2 2 0 0121 17.72V21a2 2 0 01-2 2h-1C9.82 23 1 14.18 1 3V2a2 2 0 012-2h2z" />
-                    </svg>
-                    Llamar Ahora
-                </a>
-
-                <!-- Botón WhatsApp -->
-                <a href="https://wa.me/573226862397"
-                    target="_blank"
-                    class="inline-flex items-center justify-center px-6 py-3 bg-white text-[var(--verde-neon)] font-semibold rounded-lg shadow-md hover:shadow-lg hover:bg-gray-100 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 mr-2" viewBox="0 0 24 24">
-                        <path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.26-1.63A12 12 0 0 0 24 12c0-3.19-1.24-6.19-3.48-8.52zM12 22a9.94 9.94 0 0 1-5.07-1.38l-.36-.21-3.72.97.99-3.62-.23-.37A9.94 9.94 0 1 1 22 12c0 5.52-4.48 10-10 10z"/>
-                    </svg>
-                    Enviar Mensaje
-                </a>
-            </div>
         </div>
-    </section>
 
-    <section class="relative bg-[url('https://plus.unsplash.com/premium_photo-1677130461825-a6af681e401b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8')] bg-cover bg-center h-[175px] flex items-center justify-center">
-        <!-- Capa oscura -->
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="max-w-lg mx-auto px-6 text-center text-[var(--negro)]">
+            <!-- Formulario -->
+            <form class="space-y-4">
+                <!-- Nombre -->
+                <div class="relative">
+                    <input type="text" placeholder="Nombre..." required
+                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                    <span class="absolute right-3 top-3 text-gray-400">👤</span>
+                    <span class="absolute right-1 top-0 text-red-500">*</span>
+                </div>
 
-        <!-- Contenido -->
-        <div class="relative text-center px-6 max-w-3xl">
-            <p class="text-white text-lg mb-4">
-                Te espero para que juntos elevemos tu calidad de vida y la de tu familia.
-            </p>
+                <!-- Email -->
+                <div class="relative">
+                    <input type="email" placeholder="Email..." required
+                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                    <span class="absolute right-3 top-3 text-gray-400">✉️</span>
+                    <span class="absolute right-1 top-0 text-red-500">*</span>
+                </div>
+
+                <!-- Botón -->
+                <button type="submit"
+                    class="bg-[var(--verde-azul)] text-white font-['cremiss'] text-2xl py-3 px-10 rounded-full hover:bg-[var(--verde-neon)] transition mx-auto block">
+                    Enviar
+                </button>
+            </form>
         </div>
     </section>
 
@@ -426,12 +481,12 @@
 
 
     <!-- Footer -->
-    <footer class="bg-[#C8E6C9] text-black py-12">
+    <footer class="bg-[var(--turquesa)] text-black py-12">
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Sofía Paredes Psicóloga</h3>
-                    <p class="text-white-400">Transformando la mente y el cuerpo de personas y familias que buscan fortalecer la autoconfianza, autonomía y bienestar integral.</p>
+                    <img src="logo_nav.svg" alt="Sofía Paredes Psicóloga"
+                        class="mx-auto w-64 md:center w-80 mb-3">
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Servicios</h3>
@@ -483,7 +538,7 @@
             </button>
 
             <!-- Contenido -->
-            <h2 class="text-2xl font-bold text-[var(--verde-neon)] mb-3 font-['League_Spartan']">
+            <h2 class="text-2xl font-bold text-[var(--verde-azul)] mb-3 font-['League_Spartan']">
                 ¡Bienvenido a tu espacio de bienestar!
             </h2>
             <p class="text-gray-700 mb-6 font-['Montserrat']">
@@ -520,7 +575,7 @@
 
                 <button 
                     type="submit" 
-                    class="w-full bg-[var(--verde-neon)] text-white py-2 rounded-lg font-bold">
+                    class="w-full bg-[var(--verde-azul)] text-white py-2 rounded-lg font-bold">
                         Reservar
                 </button>
             </form>
