@@ -464,42 +464,70 @@
         <div class="max-w-lg mx-auto px-6 text-center text-[var(--negro)]">
             <!-- Formulario -->
             <form 
-                name="reserva" 
+                name="contacto" 
                 method="POST" 
                 data-netlify="true" 
-                id="formReserva" 
+                id="formContacto" 
                 class="space-y-4"
                 netlify>
 
                 <!-- Campo oculto obligatorio para Netlify -->
-                <input type="hidden" name="form-name" value="reserva">
+                <input type="hidden" name="form-name" value="contacto">
 
-                <div>
-                    <input type="text" placeholder="Nombre" id="nombre" name="nombre" required class="w-full p-2 border rounded">
+                <!-- Nombre -->
+                <div class="relative">
+                    <input type="text" placeholder="Nombre..." name="nombre" required
+                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                    <span class="absolute right-3 top-3 text-gray-400">👤</span>
+                    <span class="absolute right-1 top-0 text-red-500">*</span>
                 </div>
 
-                <div>
-                    <input type="email" placeholder="Email" id="correo" name="correo" required class="w-full p-2 border rounded">
+                <!-- Email -->
+                <div class="relative">
+                    <input type="email" placeholder="Email..." name="email" required
+                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                    <span class="absolute right-3 top-3 text-gray-400">✉️</span>
+                    <span class="absolute right-1 top-0 text-red-500">*</span>
                 </div>
 
-                <div>
-                    <input type="tel" placeholder="Teléfono"  id="telefono" name="telefono" required class="w-full p-2 border rounded">
-                </div>
-
-                <button 
-                    type="submit" 
-                    class="w-full bg-[var(--verde-azul)] text-white py-2 rounded-lg font-bold">
-                        Enviar
+                <!-- Botón -->
+                <button type="submit"
+                    class="bg-[var(--verde-azul)] text-white font-['cremiss'] text-2xl py-3 px-10 rounded-full mx-auto block">
+                    Enviar
                 </button>
             </form>
 
-            <div id="mensajeExito" class="hidden text-center">
-                <h2 class="text-2xl font-bold text-[var(--verde-azul)] mb-3 font-['League_Spartan']">
-                    ✅ ¡Reserva enviada con éxito!
-                </h2>
-            </div>
+            <!-- Mensaje de éxito oculto -->
+            <p id="mensajeExitoContacto" class="text-green-600 font-semibold mt-4 hidden text-center">
+                ✅ ¡Mensaje enviado con éxito!
+            </p>
         </div>
     </section>
+
+    <script>
+        const formContacto = document.getElementById("formContacto");
+        const mensajeExitoContacto = document.getElementById("mensajeExitoContacto");
+
+        if (formContacto) {
+            formContacto.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(formContacto);
+
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                })
+                .then(() => {
+                    formContacto.classList.add("hidden"); // ocultar el form
+                    mensajeExitoContacto.classList.remove("hidden"); // mostrar éxito
+                    formContacto.reset();
+                })
+                .catch((error) => alert("❌ Error al enviar el mensaje: " + error));
+            });
+        }
+    </script>
 
     <!-- Botón flotante de WhatsApp -->
     <div class="group fixed bottom-6 right-6 z-50">
@@ -618,53 +646,36 @@
                 </button>
             </form>
 
-            <div id="mensajeExito" class="hidden text-center">
-                <h2 class="text-2xl font-bold text-[var(--verde-azul)] mb-3 font-['League_Spartan']">
-                    ✅ ¡Reserva enviada con éxito!
-                </h2>
-            </div>
+            <!-- Mensaje de éxito oculto -->
+            <p id="mensajeExito" class="text-green-600 font-semibold mt-4 hidden">
+                ✅ ¡Reserva enviada con éxito!
+            </p>
         </div>
     </div>
 
     <script>
-        // Mostrar modal al cargar la página
-        window.onload = function() {
-            document.getElementById("promoModal").classList.remove("hidden");
-        };
+        const formReserva = document.getElementById("formReserva");
+        const mensajeExitoReserva = document.getElementById("mensajeExito");
 
-        // Cerrar modal
-        function closeModal() {
-            document.getElementById("promoModal").classList.add("hidden");
-        }
+        if (formReserva) {
+            formReserva.addEventListener("submit", function (e) {
+                e.preventDefault();
 
-        const form = document.getElementById("formReserva");
-        const formContainer = document.getElementById("formContainer");
-        const mensajeExito = document.getElementById("mensajeExito");
+                const formData = new FormData(formReserva);
 
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Crear objeto con datos del formulario
-            const formData = new FormData(form);
-
-            // Asegurar que el form-name se envíe
-            formData.append("form-name", "reserva");
-
-            // Enviar a Netlify Forms usando fetch
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString(),
-            })
-            .then(() => {
-                formContainer.classList.add("hidden");
-                mensajeExito.classList.remove("hidden");
-                form.reset();
-            })
-            .catch((error) => {
-                alert("❌ Error al enviar: " + error);
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                })
+                .then(() => {
+                    formReserva.classList.add("hidden"); // ocultar el form
+                    mensajeExitoReserva.classList.remove("hidden"); // mostrar éxito
+                    formReserva.reset();
+                })
+                .catch((error) => alert("❌ Error al enviar la reserva: " + error));
             });
-        });
+        }
     </script>
 
     <!-- Netlify CMS -->
