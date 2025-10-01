@@ -11,7 +11,7 @@
         /* Tipografía */
         @font-face {
             font-family: 'Cremiss';
-            src: url('cremisss.ttf') format('truetype');
+            src: url('/fonts/cremisss.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -45,7 +45,7 @@
                 <!-- Logo -->
                 <div>
                     <img src="img/nav_name.webp" alt="Sofía Paredes Psicóloga"
-                        class="mx-auto w-64 md:center w-70 mb-1">
+                        class="mx-auto w-64 md:w-[17.5rem] mb-1">
                 </div>
 
                 <!-- Menu -->
@@ -96,7 +96,7 @@
             </p>
 
             <div class="flex justify-center mb-6">
-                <a href="https://instagram.com/sofiaparedes.psi" target="_blank" id="btn-ig"
+                <a href="https://instagram.com/sofiaparedes.psi" target="_blank" id="btn-ig" aria-label="Instagram de Sofía Paredes"
                     class="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--rosa)] shadow-lg hover:scale-110 transition-transform">
                     <i class="fab fa-instagram text-3xl text-black"></i>
                 </a>
@@ -414,8 +414,7 @@
                         method="POST" 
                         data-netlify="true"
                         id="formContacto" 
-                        class="space-y-4"
-                        netlify>
+                        class="space-y-4">
 
                     <!-- Campo oculto obligatorio para Netlify -->
                     <input type="hidden" name="form-name" value="contacto">
@@ -555,8 +554,7 @@
                 method="POST" 
                 data-netlify="true" 
                 id="formReserva" 
-                class="space-y-4"
-                netlify>
+                class="space-y-4">
 
                 <!-- Campo oculto obligatorio para Netlify -->
                 <input type="hidden" name="form-name" value="reserva">
