@@ -1,12 +1,16 @@
 {
   "name": "blog-netlify-cms",
   "version": "1.0.0",
-  "description": "Blog con Netlify CMS y generador de index.json",
+  "description": "Blog con Netlify CMS",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'No build needed'"
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  }
 }
