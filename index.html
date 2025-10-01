@@ -26,72 +26,11 @@
             --verde-apagado: rgb(147,194,160);
         }
 
-        /* Navbar */
-        .navbar-title {
-            color: var(--negro);
-            font-size: clamp(1.4rem, 2.5vw, 2rem);
-        }
-
-        /* Secciones */
-        .section.bg {
-            background-color: var(--gris-claro);
-            padding: clamp(2rem, 3vw, 4rem);
-        }
-
-        /* Grilla de puntos */
-        .puntos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: clamp(15px, 2vw, 30px);
-            margin-top: 30px;
-        }
-
-        .punto {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #f9f9f9;
-            padding: clamp(12px, 2vw, 20px);
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-
-        .punto:hover {
-            transform: scale(1.03);
-        }
-
-        /* Iconos */
-        .icono {
-            width: clamp(30px, 5vw, 50px);
-            height: clamp(30px, 5vw, 50px);
-            object-fit: contain;
-            border-radius: 50%;
-            background: white;
-            padding: 5px;
-        }
-
-        /* Cards */
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-                        0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
         /* Ajustes adicionales para pantallas pequeñas */
         @media (max-width: 768px) {
             h1 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
             h2 { font-size: clamp(1.2rem, 5vw, 1.8rem); }
             h3 { font-size: clamp(1rem, 4vw, 1.5rem); }
-    
-            .navbar-title {
-                font-size: clamp(1rem, 4vw, 1.5rem);
-            }
-    
-            .punto {
-                flex-direction: column;
-                text-align: center;
-            }
         }
     </style>
 </head>
@@ -105,17 +44,17 @@
             
                 <!-- Logo -->
                 <div>
-                    <img src="img/nav_name.png" alt="Sofía Paredes Psicóloga"
+                    <img src="img/nav_name.webp" alt="Sofía Paredes Psicóloga"
                         class="mx-auto w-64 md:center w-70 mb-1">
                 </div>
 
                 <!-- Menu -->
                 <div id="menu" class="hidden md:flex ml-10 items-baseline space-x-6 font-['League_Spartan'] uppercase">
-                    <a href="#hero" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Inicio</a>
-                    <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Sobre mí</a>
-                    <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Metodología</a>
-                    <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Servicios</a>
-                    <a href="#contacto" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)] hover:text-[var(--verde-claro)]">Contacto</a>
+                    <a href="#hero" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)]">Inicio</a>
+                    <a href="#sobre-mi" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)]">Sobre mí</a>
+                    <a href="#metodologia" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)]">Metodología</a>
+                    <a href="#servicios" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)]">Servicios</a>
+                    <a href="#contacto" class="px-3 py-2 rounded-md text-sm font-semibold text-[var(--negro)]">Contacto</a>
                 </div>
             </div>
         </div>
@@ -136,13 +75,13 @@
 
     <!-- Hero Section -->
     <section id="hero" 
-        class="relative h-screen bg-[url('./img/banner_principal.png')] bg-cover bg-center flex items-center justify-center transition-all duration-700">
+        class="relative h-screen bg-[url('./img/banner_principal.webp')] bg-cover bg-center flex items-center justify-center transition-all duration-700">
 
         <!-- Contenido -->
         <div id="hero-content" class="relative text-center px-4 max-w-3xl text-white transition-all duration-700">
         
             <!-- Logo -->
-            <img src="img/logo_nav.png" alt="Sofía Paredes Psicóloga" id="hero-logo" 
+            <img src="img/logo_nav.webp" alt="Sofía Paredes Psicóloga" id="hero-logo" 
                 class="mx-auto w-64 md:w-80 mb-8 transition-all duration-700">
 
             <!-- Texto -->
@@ -213,7 +152,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Imagen -->
                 <div class="relative flex justify-center">
-                    <img src="img/about_me.png" 
+                    <img src="img/about_me.webp" 
                         alt="Sofía Paredes Psicóloga"
                         class="relative z-10 w-64 md:w-80 lg:w-96 object-contain">
                 </div>
@@ -264,7 +203,7 @@
                 <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="flex items-center mb-3">
-                            <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/mente-activa-60-.webp" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Mente Activa 60+
@@ -295,7 +234,7 @@
                 <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="flex items-center mb-3">
-                            <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/mente-en-desarrollo.webp" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                               style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                   Mente en Desarrollo
@@ -326,7 +265,7 @@
                 <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-[var(--verde-azul)] hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="flex items-center mb-3">
-                            <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/mente-en-rendimiento.webp" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Mente en Rendimiento
@@ -366,7 +305,7 @@
                     <!-- Duración -->
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">
-                            <img src="img/duracion-de-las-sesiones.jpg" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/duracion-de-las-sesiones.webp" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Duración de las sesiones
@@ -381,7 +320,7 @@
                     <!-- Modalidad -->
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">
-                            <img src="img/modalidad-presencial.jpg" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/modalidad-presencial.webp" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Modalidad presencial a domicilio
@@ -400,7 +339,7 @@
                     <h2 class="text-4xl md:text-5xl lg:text-6xl text-center mb-10" style="font-family: 'Cremiss', sans-serif;">
                         Mi metodología
                     </h2>
-                    <img src="img/metodologia.png"
+                    <img src="img/metodologia.webp"
                         alt="Mi metodología"
                         class="max-w-xs mx-auto rounded-lg">
                 </div>
@@ -410,7 +349,7 @@
                     <!-- Tipo de intervención -->
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">    
-                            <img src="img/tipo-de-intervencion.jpg" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/tipo-de-intervencion.webp" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Tipo de intervención
@@ -425,7 +364,7 @@
                     <!-- Personalización -->
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">    
-                            <img src="img/personalizacion-del-proceso.jpg" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
+                            <img src="img/personalizacion-del-proceso.webp" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
                             <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Personalización del proceso
@@ -444,11 +383,11 @@
     </section>
 
     <!-- Contact -->
-    <section id="contacto" class="py-5 bg-cover bg-center bg-no-repeat" style="background-image: url('img/bg_contacto.png');">
+    <section id="contacto" class="py-5 bg-cover bg-center bg-no-repeat" style="background-image: url('img/bg_contacto.webp');">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-2">
             <!-- Columna izquierda (Imagen) -->
             <div class="flex justify-center">
-                <img src="img/contacto.png" 
+                <img src="img/contacto.webp" 
                     alt="Sofía Paredes Psicóloga"
                     class="max-h-[400px] object-contain drop-shadow-xl" />
             </div>
@@ -473,7 +412,7 @@
                     <form 
                         name="contacto" 
                         method="POST" 
-                        data-netlify="true" 
+                        data-netlify="true"
                         id="formContacto" 
                         class="space-y-4"
                         netlify>
@@ -484,7 +423,7 @@
                     <!-- Nombre -->
                     <div class="relative">
                         <input type="text" placeholder="Nombre..." name="nombre" required
-                            class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                            class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-azul)]" />
                         <span class="absolute right-3 top-3 text-gray-400">👤</span>
                         <span class="absolute right-1 top-0 text-red-500">*</span>
                     </div>
@@ -492,7 +431,7 @@
                     <!-- Email -->
                     <div class="relative">
                         <input type="email" placeholder="Email..." name="email" required
-                            class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                            class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-azul)]" />
                         <span class="absolute right-3 top-3 text-gray-400">✉️</span>
                         <span class="absolute right-1 top-0 text-red-500">*</span>
                     </div>
@@ -517,22 +456,26 @@
         const mensajeExitoContacto = document.getElementById("mensajeExitoContacto");
 
         if (formContacto) {
-            formContacto.addEventListener("submit", function (e) {
+            formContacto.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
                 const formData = new FormData(formContacto);
 
-                fetch("/", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString(),
-                })
-                .then(() => {
-                    formContacto.classList.add("hidden"); // ocultar el form
-                    mensajeExitoContacto.classList.remove("hidden"); // mostrar éxito
+                try {
+                    await fetch("/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString(),
+                    });
+
+                    // Ocultar formulario y mostrar mensaje
+                    formContacto.classList.add("hidden");
+                    mensajeExitoContacto.classList.remove("hidden");
                     formContacto.reset();
-                })
-                .catch((error) => alert("❌ Error al enviar el mensaje: " + error));
+
+                } catch (error) {
+                    alert("❌ Error al enviar el mensaje: " + error);
+                }
             });
         }
     </script>
@@ -559,7 +502,7 @@
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <img src="img/nav_name.png" alt="Sofía Paredes Psicóloga"
+                    <img src="img/nav_name.webp" alt="Sofía Paredes Psicóloga"
                         class="mx-auto w-64 md:center w-80 mb-3">
                 </div>
                 <div>
@@ -634,7 +577,7 @@
                 </div>
 
                 <button 
-                    type="submit" 
+                    type="submit" id="btnReserva"
                     class="w-full bg-[var(--verde-azul)] text-white py-2 rounded-lg font-bold">
                         Reservar
                 </button>
@@ -648,51 +591,45 @@
     </div>
 
     <script>
-        // Función para abrir el modal
-        function openModal() {
-            document.getElementById("promoModal").classList.remove("hidden");
-        }
-
-        // Función para cerrar el modal
-        function closeModal() {
-            document.getElementById("promoModal").classList.add("hidden");
-        }
-
-        // Mostrar el modal automáticamente al cargar la página
-        window.addEventListener("DOMContentLoaded", () => {
-            openModal();
-        });
-
         const formReserva = document.getElementById("formReserva");
-        const mensajeExitoReserva = document.getElementById("mensajeExito");
+        const mensajeExito = document.getElementById("mensajeExito");
+        const btnReserva = document.getElementById("btnReserva");
 
         if (formReserva) {
-            formReserva.addEventListener("submit", function (e) {
+            formReserva.addEventListener("submit", async (e) => {
                 e.preventDefault();
+
+                // Cambiar botón a estado "enviando..."
+                btnReserva.disabled = true;
+                btnReserva.textContent = "Enviando...";
 
                 const formData = new FormData(formReserva);
 
-                fetch("/", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString(),
-                })
-                .then(() => {
-                    // Ocultar el formulario y mostrar el mensaje de éxito
-                    formReserva.classList.add("hidden");
-                    mensajeExitoReserva.classList.remove("hidden");
+                try {
+                    await fetch("/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString(),
+                    });
 
-                    // Resetear el form para la próxima vez
+                    // Ocultar form y mostrar éxito
+                    formReserva.classList.add("hidden");
+                    mensajeExito.classList.remove("hidden");
                     formReserva.reset();
 
-                    // Después de 2 segundos, cerrar modal y restaurar el formulario
+                    // Restaurar después de 2s
                     setTimeout(() => {
-                        closeModal();
                         formReserva.classList.remove("hidden");
-                        mensajeExitoReserva.classList.add("hidden");
-                    }, 1500);
-                })
-                .catch((error) => alert("❌ Error al enviar la reserva: " + error));
+                        mensajeExito.classList.add("hidden");
+                        btnReserva.disabled = false;
+                        btnReserva.textContent = "Reservar";
+                    }, 1000);
+
+                } catch (error) {
+                    alert("❌ Error al enviar la reserva: " + error);
+                    btnReserva.disabled = false;
+                    btnReserva.textContent = "Reservar";
+                }
             });
         }
     </script>
