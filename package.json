@@ -4,7 +4,7 @@
   "description": "Blog con Netlify CMS y generador de index.json",
   "main": "index.html",
   "scripts": {
-    "build": "node scripts/update-index.js"
+    "build": "echo 'No build needed'"
   },
   "author": "",
   "license": "MIT",
