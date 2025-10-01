@@ -4,7 +4,7 @@
   "description": "Blog con Netlify CMS",
   "main": "index.html",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "build": "echo 'No build needed'"
   },
   "author": "",
   "license": "MIT",
