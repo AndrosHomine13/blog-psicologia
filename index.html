@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sofía Paredes Psicóloga</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://api.fontshare.com/css?f[]=cremiss@400,500,700&display=swap" rel="stylesheet">
     <style>
-        /* Tipografías */
-        body {
-            font-family: 'Monserrat', sans-serif;
-            font-size: clamp(1rem, 2vw, 1.1rem);
-        }
-
-        h1, h2, h3, .title {
-            font-family: 'League Spartan';
-            font-weight: 750;
-        }
-
-        h1.special {
-            font-family: 'Cremiss', serif;
+        /* Tipografía */
+        @font-face {
+            font-family: 'Cremiss';
+            src: url('cremisss.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
 
         /* Colores */
@@ -112,8 +105,8 @@
             
                 <!-- Logo -->
                 <div>
-                    <img src="logo_nav.svg" alt="Sofía Paredes Psicóloga"
-                        class="mx-auto w-64 md:center w-80 mb-3">
+                    <img src="img/nav_name.png" alt="Sofía Paredes Psicóloga"
+                        class="mx-auto w-64 md:center w-70 mb-1">
                 </div>
 
                 <!-- Menu -->
@@ -143,30 +136,35 @@
 
     <!-- Hero Section -->
     <section id="hero" 
-        class="relative h-screen bg-[url('https://media-public.canva.com/5WaQk/MAFwfM5WaQk/1/tl.jpg')] bg-cover bg-center flex items-center justify-center transition-all duration-700">">
-
-        <!-- Capa color -->
-        <div class="absolute inset-0 bg-[var(--verde-azul)] opacity-90"></div>
+        class="relative h-screen bg-[url('./img/banner_principal.png')] bg-cover bg-center flex items-center justify-center transition-all duration-700">
 
         <!-- Contenido -->
-        <div id="hero-content" class="relative text-center px-6 max-w-3xl text-white transition-all duration-700">
+        <div id="hero-content" class="relative text-center px-4 max-w-3xl text-white transition-all duration-700">
         
             <!-- Logo -->
-            <img src="logo.svg" alt="Sofía Paredes Psicóloga" id="hero-logo" 
+            <img src="img/logo_nav.png" alt="Sofía Paredes Psicóloga" id="hero-logo" 
                 class="mx-auto w-64 md:w-80 mb-8 transition-all duration-700">
 
             <!-- Texto -->
-            <p class="text-xl mb-4">
+            <p class="text-2xl mb-4">
                 Desde que descubrí el <span class="font-bold">poder de la actividad física</span> en la mente,
                 mi misión ha sido <span class="font-bold">acompañar a personas y familias a mejorar su calidad de vida</span>
                 a través del arte, el movimiento y la psicología.
             </p>
-            <p class="text-xl mb-6">
+            <p class="text-2xl mb-6">
                 Si quieres conocer más, <span class="font-bold">sígueme en Instagram</span> para aprender
                 <span class="font-bold">herramientas gratuitas</span> sobre el bienestar de tu <span class="font-bold">mente</span> y tu <span class="font-bold">cuerpo</span>.
             </p>
+
+            <div class="flex justify-center mb-6">
+                <a href="https://instagram.com/sofiaparedes.psi" target="_blank" id="btn-ig"
+                    class="flex items-center justify-center w-14 h-14 rounded-full bg-[var(--rosa)] shadow-lg hover:scale-110 transition-transform">
+                    <i class="fab fa-instagram text-3xl text-black"></i>
+                </a>
+            </div>
+
             <a href="https://instagram.com/sofiaparedes.psi" target="_blank" id="hero-btn"
-                class="bg-[var(--rosa)] text-xl font-['Cremiss'] text-black px-8 py-3 rounded-full shadow-lg hover:bg-[var(--rosa)]">
+                class="bg-[var(--rosa)] text-2xl text-black px-8 py-3 rounded-full" style="font-family: 'Cremiss', sans-serif;">
                 ¡Sígueme en Instagram!
             </a>
         </div>
@@ -179,6 +177,7 @@
             const content = document.getElementById("hero-content");
             const logo = document.getElementById("hero-logo");
             const btn = document.getElementById("hero-btn");
+            const ig_btn = document.getElementById("btn-ig");
 
             if (window.scrollY > 50) {
                 // Reducir Hero
@@ -189,9 +188,9 @@
                 // Reducir logo
                 logo.classList.remove("w-64", "md:w-80");
                 logo.classList.add("w-40", "md:w-52");
-                // Reducir botón
-                btn.classList.remove("px-6", "py-3", "text-base");
-                btn.classList.add("px-4", "py-2", "text-sm");
+                // Esconder botones
+                btn.classList.add("opacity-0", "pointer-events-none");
+                ig_btn.classList.add("opacity-0", "pointer-events-none");
             } else {
                 // Hero a pantalla completa
                 hero.classList.add("h-screen");
@@ -201,9 +200,9 @@
                 // Restaurar logo
                 logo.classList.remove("w-40", "md:w-52");
                 logo.classList.add("w-64", "md:w-80");
-                // Restaurar botón
-                btn.classList.remove("px-4", "py-2", "text-sm");
-                btn.classList.add("px-6", "py-3", "text-base");
+                // Mostrar botones
+                btn.classList.remove("opacity-0", "pointer-events-none");
+                ig_btn.classList.remove("opacity-0", "pointer-events-none");
             }
         });
     </script>
@@ -214,7 +213,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Imagen -->
                 <div class="relative flex justify-center">
-                    <img src="https://media.canva.com/v2/image-resize/format:JPG/height:800/quality:92/uri:ifs%3A%2F%2FM%2F056542ed-092c-4fb8-94ec-e616881e1f35/watermark:F/width:640?csig=AAAAAAAAAAAAAAAAAAAAAFprOIaoBi8cwjnRJmK-2JETwCYcOCdoPQEPppwP7kz1&exp=1759118604&osig=AAAAAAAAAAAAAAAAAAAAAJAZAAzo5YM12Bvpp4DtusbXQJsEXlTLzsw6fisk_CV0&signer=media-rpc&x-canva-quality=screen" 
+                    <img src="img/about_me.png" 
                         alt="Sofía Paredes Psicóloga"
                         class="relative z-10 w-64 md:w-80 lg:w-96 object-contain">
                 </div>
@@ -222,8 +221,8 @@
                 <!-- Nombre con SVG + Texto -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
                     <!-- Nombre con SVG -->
-                    <img src="nombre.svg" alt="Sofía Paredes Mejía" 
-                        class="w-80 md:w-[40rem] h-auto mb-1">
+                    <img src="img/nombre.svg" alt="Sofía Paredes Mejía" 
+                        class="w-80 md:w-[40rem] h-auto mb-4">
                     <!-- Texto -->
                     <div style="font-family: 'Montserrat', sans-serif; color: var(--negro);">
                     <p>
@@ -255,7 +254,7 @@
     <section id="servicios" class="py-12 bg-[var(--gris-claro)]">
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
             <!-- Title-->
-            <h2 class="text-5xl text-center mb-12" style="font-family: 'Cremiss', serif; color: var(--negro);">
+            <h2 class="text-5xl text-center mb-12" style="font-family: 'Cremiss', sans-serif;">
                 Conoce mis servicios
             </h2>
 
@@ -266,7 +265,7 @@
                     <div>
                         <div class="flex items-center mb-3">
                             <img src="img/mente-activa-60+.jpg" alt="Mente activa 60+" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Mente Activa 60+
                             </h3>
@@ -286,7 +285,7 @@
                     <!-- Botón -->
                     <div class="mt-6 flex justify-center">
                         <a href="https://wa.me/573226862397" target="_blank" 
-                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-xl px-10 py-3 rounded-full">
+                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-2xl px-10 py-3 rounded-full">
                             Agenda tu sesión
                         </a>
                     </div>
@@ -297,7 +296,7 @@
                     <div>
                         <div class="flex items-center mb-3">
                             <img src="img/mente-en-desarrollo.jpg" alt="Mente en Desarrollo" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                               style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                   Mente en Desarrollo
                             </h3>
@@ -317,7 +316,7 @@
                     <!-- Botón -->
                     <div class="mt-6 flex justify-center">
                         <a href="https://wa.me/573226862397" target="_blank" 
-                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-xl px-10 py-3 rounded-full">
+                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-2xl px-10 py-3 rounded-full">
                             Agenda tu sesión
                         </a>
                     </div>
@@ -328,7 +327,7 @@
                     <div>
                         <div class="flex items-center mb-3">
                             <img src="img/mente-en-rendimiento.jpg" alt="Mente en Rendimiento" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Mente en Rendimiento
                             </h3>
@@ -347,7 +346,7 @@
                     <!-- Botón -->
                     <div class="mt-6 flex justify-center">
                         <a href="https://wa.me/573226862397" target="_blank" 
-                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-xl px-10 py-3 rounded-full">
+                            class="bg-[var(--verde-azul)] text-white font-['Cremiss'] text-2xl px-10 py-3 rounded-full">
                             Agenda tu sesión
                         </a>
                     </div>
@@ -368,7 +367,7 @@
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">
                             <img src="img/duracion-de-las-sesiones.jpg" alt="Duración de las sesiones" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Duración de las sesiones
                             </h3>
@@ -383,7 +382,7 @@
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">
                             <img src="img/modalidad-presencial.jpg" alt="Modalidad presencial a domicilio" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Modalidad presencial a domicilio
                             </h3>
@@ -398,7 +397,7 @@
                 <!-- Centro -->
                 <div class="space-y-8">
                     <!-- Title -->
-                    <h2 class="text-5xl text-center mb-10" style="font-family: 'Cremiss', serif; color: var(--negro);">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl text-center mb-10" style="font-family: 'Cremiss', sans-serif;">
                         Mi metodología
                     </h2>
                     <img src="https://media.canva.com/v2/image-resize/format:JPG/height:800/quality:92/uri:ifs%3A%2F%2FM%2Fba32fcf2-96aa-401f-aaeb-253c1d456c92/watermark:F/width:640?csig=AAAAAAAAAAAAAAAAAAAAANNqEDfoOVlZdBo7D0D0mZaRjbSSb1ZSjFTHl1C-Hcsm&exp=1759129975&osig=AAAAAAAAAAAAAAAAAAAAAANy-MuLmgLAA_AzFwkaKJC3mkhEztXgFY8P1fY_q3d7&signer=media-rpc&x-canva-quality=screen"
@@ -412,7 +411,7 @@
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">    
                             <img src="img/tipo-de-intervencion.jpg" alt="Tipo de intervención" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Tipo de intervención
                             </h3>
@@ -427,7 +426,7 @@
                     <div class="bg-white p-6 rounded-xl shadow-md border-t-4 hover:shadow-xl transition" style="border-color: var(--verde-azul);">
                         <div class="flex items-center mb-3">    
                             <img src="img/personalizacion-del-proceso.jpg" alt="Personalización del proceso" class="w-12 h-12 mr-3 object-contain">
-                            <h3 class="text-xl font-semibold"
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-semibold"
                                 style="font-family: 'League Spartan', sans-serif; color: var(--verde-azul);">
                                 Personalización del proceso
                             </h3>
@@ -445,63 +444,72 @@
     </section>
 
     <!-- Contact -->
-    <section id="contacto" class="py-12 bg-[var(--verde-apagado)]">
-        <div class="max-w-full mx-auto text-center text-[var(--negro)]">
-            <!-- Título -->
-            <h2 class="text-xl md:text-3xl font-['Nourd'] uppercase tracking-[0.4em] mb-1">
-                ¡Tu primera
-            </h2>
-            <h3 class="text-3xl md:text-5xl font-['Cremiss'] mb-6">
-                valoración es gratis!
-            </h3>
+    <section id="contacto" class="py-5 bg-cover bg-center bg-no-repeat" style="background-image: url('img/bg_contacto.png');">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-2">
+            <!-- Columna izquierda (Imagen) -->
+            <div class="flex justify-center">
+                <img src="img/contacto.png" 
+                    alt="Sofía Paredes Psicóloga"
+                    class="max-h-[400px] object-contain drop-shadow-xl" />
+            </div>
 
-            <!-- Subtítulo -->
-            <p class="text-lg md:text-3xl font-['Nourd'] mb-12">
-                Completa tus datos para recibir más información
-            </p>
-        </div>
+            <!-- Columna derecha (Texto + Formulario) -->
+            <div class="text-center md:text-center">
+                <!-- Título -->
+                <h2 class="text-xl md:text-3xl font-['Nourd'] uppercase tracking-[0.4em] mb-1">
+                    ¡Tu primera
+                </h2>
+                <h3 class="text-3xl md:text-5xl mb-6" style="font-family: 'Cremiss', sans-serif;">
+                    valoración es gratis!
+                </h3>
 
-        <div class="max-w-lg mx-auto px-6 text-center text-[var(--negro)]">
-            <!-- Formulario -->
-            <form 
-                name="contacto" 
-                method="POST" 
-                data-netlify="true" 
-                id="formContacto" 
-                class="space-y-4"
-                netlify>
+                <!-- Subtítulo -->
+                <p class="text-lg md:text-3xl font-['Nourd'] mb-12">
+                    Completa tus datos para recibir más información
+                </p>
 
-                <!-- Campo oculto obligatorio para Netlify -->
-                <input type="hidden" name="form-name" value="contacto">
+                <div class="max-w-lg mx-auto px-6 text-center text-[var(--negro)]">
+                    <!-- Formulario -->
+                    <form 
+                        name="contacto" 
+                        method="POST" 
+                        data-netlify="true" 
+                        id="formContacto" 
+                        class="space-y-4"
+                        netlify>
 
-                <!-- Nombre -->
-                <div class="relative">
-                    <input type="text" placeholder="Nombre..." name="nombre" required
-                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
-                    <span class="absolute right-3 top-3 text-gray-400">👤</span>
-                    <span class="absolute right-1 top-0 text-red-500">*</span>
+                    <!-- Campo oculto obligatorio para Netlify -->
+                    <input type="hidden" name="form-name" value="contacto">
+
+                    <!-- Nombre -->
+                    <div class="relative">
+                        <input type="text" placeholder="Nombre..." name="nombre" required
+                            class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                        <span class="absolute right-3 top-3 text-gray-400">👤</span>
+                        <span class="absolute right-1 top-0 text-red-500">*</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="relative">
+                        <input type="email" placeholder="Email..." name="email" required
+                            class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
+                        <span class="absolute right-3 top-3 text-gray-400">✉️</span>
+                        <span class="absolute right-1 top-0 text-red-500">*</span>
+                    </div>
+
+                    <!-- Botón -->
+                    <button type="submit"
+                        class="bg-[var(--verde-azul)] text-white text-2xl py-3 px-10 rounded-full mx-auto block" style="font-family: 'Cremiss', sans-serif;">
+                        Enviar
+                    </button>
+                </form>
+
+                <!-- Mensaje de éxito oculto -->
+                <p id="mensajeExitoContacto" class="text-green-600 font-semibold mt-4 hidden text-center">
+                    ✅ ¡Mensaje enviado con éxito!
+                </p>
                 </div>
-
-                <!-- Email -->
-                <div class="relative">
-                    <input type="email" placeholder="Email..." name="email" required
-                        class="w-full px-4 py-3 rounded-md text-[var(--negro)] focus:outline-none focus:ring-2 focus:ring-[var(--verde-neon)]" />
-                    <span class="absolute right-3 top-3 text-gray-400">✉️</span>
-                    <span class="absolute right-1 top-0 text-red-500">*</span>
-                </div>
-
-                <!-- Botón -->
-                <button type="submit"
-                    class="bg-[var(--verde-azul)] text-white font-['cremiss'] text-2xl py-3 px-10 rounded-full mx-auto block">
-                    Enviar
-                </button>
-            </form>
-
-            <!-- Mensaje de éxito oculto -->
-            <p id="mensajeExitoContacto" class="text-green-600 font-semibold mt-4 hidden text-center">
-                ✅ ¡Mensaje enviado con éxito!
-            </p>
-        </div>
+            </div>
     </section>
 
     <script>
@@ -551,7 +559,7 @@
         <div class="w-full px-3 md:px-6 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <img src="logo_nav.svg" alt="Sofía Paredes Psicóloga"
+                    <img src="img/nav_name.png" alt="Sofía Paredes Psicóloga"
                         class="mx-auto w-64 md:center w-80 mb-3">
                 </div>
                 <div>
@@ -565,24 +573,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Contacto</h3>
                     <ul class="space-y-2">
-                        <li class="text-white-400">info@psicoayuda.com</li>
-                        <li class="text-white-400">+57 322 6862397</li>
+                        <li><a class="text-white-400 hover:text-white" href="https://wa.me/573226862397" target="_blank">Escríbeme por WhatsApp</a></li>
+                        <li><a class="text-white-400 hover:text-white" href="https://instagram.com/sofiaparedes.psi" target="_blank">Sígueme en Instagram</a></li>
+                        <li><a class="text-white-400 hover:text-white" href="mailto:andres2005vargas@gmail.com" target="_blank">Contáctame por email</a></li>
                     </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Redes Sociales</h3>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/sofiaparedes.psi" class="text-white-400 hover:text-white" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/573226862397" class="text-white-400 hover:text-white" target="_blank" rel="noopener noreferrer">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.52 3.48A11.92 11.92 0 0012 0C5.373 0 0 5.373 0 12c0 2.119.551 4.182 1.595 6.01L0 24l6.174-1.623A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12 0-3.192-1.244-6.197-3.48-8.52zM12 22.08c-1.929 0-3.79-.52-5.414-1.503l-.387-.228-3.665.965.978-3.57-.252-.388A9.995 9.995 0 012.04 12c0-5.493 4.467-9.96 9.96-9.96 2.663 0 5.167 1.037 7.055 2.925A9.947 9.947 0 0121.96 12c0 5.493-4.467 9.96-9.96 9.96zm5.52-7.44c-.301-.15-1.779-.879-2.055-.978-.276-.101-.477-.15-.678.15-.2.3-.778.978-.954 1.178-.176.2-.352.226-.653.075-.301-.15-1.273-.468-2.426-1.491-.896-.8-1.501-1.788-1.677-2.089-.176-.3-.019-.462.132-.612.136-.136.301-.352.452-.527.151-.176.2-.301.301-.502.1-.2.05-.377-.025-.527-.075-.15-.678-1.627-.928-2.229-.244-.586-.494-.506-.678-.516l-.578-.01c-.2 0-.527.075-.803.377-.276.301-1.055 1.03-1.055 2.507s1.081 2.908 1.231 3.109c.15.2 2.127 3.247 5.162 4.552.722.312 1.285.498 1.724.639.724.23 1.383.198 1.905.12.581-.086 1.779-.727 2.029-1.429.25-.703.25-1.304.176-1.429-.075-.125-.276-.2-.577-.35z"/>
-                            </svg>
-                        </a>
-                    </div>
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-black text-center text-white-400">
