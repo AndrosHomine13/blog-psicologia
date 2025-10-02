@@ -27,28 +27,37 @@
 
   <script>
     async function loadSubs() {
-      try {
-        const res = await fetch("/.netlify/functions/get-submissions");
-        const data = await res.json();
-        const tbody = document.querySelector("#subs tbody");
+        try {
+            const res = await fetch("/.netlify/functions/get-submissions");
+            const data = await res.json();
+    
+            console.log("📦 Data recibida:", data); // ✅ imprime la data
 
-        Object.keys(data).forEach(formName => {
-          data[formName].forEach(sub => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-              <td>${formName}</td>
-              <td>${sub.data.nombre || "-"}</td>
-              <td>${sub.data.email || sub.data.correo || "-"}</td>
-              <td>${sub.data.telefono || "-"}</td>
-              <td>${new Date(sub.created_at).toLocaleString()}</td>
-            `;
-            tbody.appendChild(tr);
-          });
-        });
-      } catch (err) {
-        console.error("❌ Error cargando submissions:", err);
-        alert("Error cargando datos del formulario");
-      }
+            const tbody = document.querySelector("#subs tbody");
+
+            Object.keys(data).forEach(formName => {
+                const subs = data[formName];
+                if (Array.isArray(subs)) {
+                    subs.forEach(sub => {
+                        const tr = document.createElement("tr");
+                        tr.innerHTML = `
+                            <td>${formName}</td>
+                            <td>${sub.data.nombre || "-"}</td>
+                            <td>${sub.data.email || sub.data.correo || "-"}</td>
+                            <td>${sub.data.telefono || "-"}</td>
+                            <td>${new Date(sub.created_at).toLocaleString()}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                } else {
+                    console.warn(`⚠️ El form ${formName} no devolvió un array:`, subs);
+                }
+            });
+
+        } catch (err) {
+            console.error("❌ Error cargando submissions:", err);
+            alert("Error cargando datos del formulario");
+        }
     }
     loadSubs();
   </script>

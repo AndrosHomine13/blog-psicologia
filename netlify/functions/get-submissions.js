@@ -1,14 +1,13 @@
-import fetch from "node-fetch";
-
 export async function handler(event) {
   try {
     const siteId = process.env.NETLIFY_SITE_ID;
     const token = process.env.NETLIFY_AUTH_TOKEN;
 
     if (!siteId || !token) {
-      throw new Error("Faltan variables de entorno NETLIFY_SITE_ID o NETLIFY_AUTH_TOKEN");
+      throw new Error("❌ Faltan NETLIFY_SITE_ID o NETLIFY_AUTH_TOKEN");
     }
 
+    // Obtener los formularios
     const formsRes = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/forms`, {
       headers: { Authorization: `Bearer ${token}` }
     });
@@ -18,10 +17,6 @@ export async function handler(event) {
     }
 
     const forms = await formsRes.json();
-
-    if (!Array.isArray(forms)) {
-      throw new Error("La respuesta de Netlify no devolvió un array de formularios");
-    }
 
     const result = {};
     for (let form of forms) {
@@ -34,7 +29,9 @@ export async function handler(event) {
       }
 
       const submissions = await subsRes.json();
-      result[form.name] = submissions;
+
+      // Aseguramos que sea array
+      result[form.name] = Array.isArray(submissions) ? submissions : [];
     }
 
     return {
@@ -43,6 +40,10 @@ export async function handler(event) {
     };
   } catch (err) {
     console.error("❌ Error en get-submissions:", err);
-    return { statusCode: 500, body: err.message };
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: err.message })
+    };
   }
 }
+
