@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Respuestas del Formulario</h1>
+  <table id="subs">
+    <thead><tr><th>Nombre</th><th>Email</th><th>Fecha</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadSubs() {
+      const res = await fetch("/.netlify/functions/get-submissions");
+      const data = await res.json();
+      const tbody = document.querySelector("#subs tbody");
+
+      data.forEach(sub => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${sub.data.nombre || "-"}</td>
+          <td>${sub.data.email || "-"}</td>
+          <td>${new Date(sub.created_at).toLocaleString()}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+    loadSubs();
+  </script>    <!-- Netlify CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+    }
+  </script>
+</body>
+</html>
